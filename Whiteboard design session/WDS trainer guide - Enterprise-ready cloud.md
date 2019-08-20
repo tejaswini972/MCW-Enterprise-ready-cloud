@@ -1,4 +1,4 @@
-![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
+![Microsoft Cloud Workshops](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
 Enterprise-ready cloud
@@ -9,7 +9,7 @@ Whiteboard design session trainer guide
 </div>
 
 <div class="MCWHeader3">
-May 2019
+August 2019
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -214,7 +214,7 @@ Trey Research has three business units: Industrial and Consumer, Electronics, an
 
 ![Trey Research has three business units: Industrial and Consumer, Electronics, and Life Sciences. Each of the Business Units has the same subunits: Product development, Marketing, and Sales and Support. Sales and Support is further divided into region subunits (US/EU/Asia). ](images/org-chart.png "Trey Research organizational flowchart")
 
-Each business unit and subunit is allocated an Azure quota/budget and is responsible for tracking their expenditure within that budget. Within a business unit, each new project should track its consumption using a specific tag for its IO code within the business unit.
+Each business unit and subunit are allocated an Azure quota/budget and is responsible for tracking their expenditure within that budget. Within a business unit, each new project should track its consumption using a specific tag for its IO code within the business unit.
 
 In addition, each business unit has a requirement to break down their costs into the following categories. Accurate allocation of costs between these categories is essential, since this data feeds into gross margin and net profit figures collated by the central finance team and published quarterly to investors.
 
@@ -551,7 +551,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     *Azure Cost Management by Cloudyn*
 
-    Azure Cost Management by Cloudyn can also be used for cost management reporting and alerting. This offers a richer set of functionality than the Azure portal. However, Cloudyn is gradually being replaced by Azure Cost Management within the Azure portal.
+    Azure Cost Management by Cloudyn can also be used for cost management reporting and alerting. This offers a richer set of functionalities than the Azure portal. However, Cloudyn is gradually being replaced by Azure Cost Management within the Azure portal.
     
     To use Cloudyn you must register from the Azure Portal. New Cloudyn registrations are limited to Microsoft CSP partner administrators (not applicable to Trey Research, who consume Azure via an Enterprise Agreement). Existing Cloudyn customers can continue to use Cloudyn for a limited time.
     
@@ -789,7 +789,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     ```
 
-   The above example shows how to enforce a simple naming constraint on a single resource type---virtual machines. Enterprise IT need to enforce their convention across all their resource types. Implementing this in a single policy requires an impractically-large conditional logic in the policy rule.
+   The above example shows how to enforce a simple naming constraint on a single resource type -- virtual machines. Enterprise IT need to enforce their convention across all their resource types. Implementing this in a single policy requires an impractically-large conditional logic in the policy rule.
 
    Instead, separate policies should be created for each resource type. These policies should then be combined into a single *policy initiative.* Using a policy initiative allows the entire set of policies to be assigned in a single operation. It also allows new naming rules to be added easily---simply add the new rule to the initiative and it will be applied across all existing assignments.
 
@@ -877,7 +877,7 @@ Many Azure governance controls be assigned at the management group scope, which 
 
 Implement governance rules using Azure Policy and assign those Policies at the root tenant management group scope. This ensures the policy is applied across all subscriptions within the organization.
 
-As well as controlling resource deployments, Azure policy provides compliance reports to identify any out-of-policy resource. Deploying the policy at the tenant root management group scope provides a single reports for all resources in the organization. If more fine-grained reporting is required, this can be achieved by deploying the policy at the appropriate scope.
+As well as controlling resource deployments, Azure policy provides compliance reports to identify any out-of-policy resource. Deploying the policy at the tenant root management group scope provides a single report for all resources in the organization. If more fine-grained reporting is required, this can be achieved by deploying the policy at the appropriate scope.
 
 
 3.  How can we ensure our deployments meet Azure security best practices, and how can we protect our Production workloads even if the security perimeter is compromised?
