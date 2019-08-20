@@ -1,4 +1,4 @@
-![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
+![Microsoft Cloud Workshops](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
 Enterprise-ready cloud
@@ -102,8 +102,7 @@ In this exercise, you will first create a Management Group for your Azure subscr
 
 In this task, you will create a new Management Group and move a subscription into this Management Group. We'll later assign Azure Policy using the Management Group scope, so that it applies automatically to all subscriptions under that scope.
 
->[!NOTE]
-> We'll use our own Management Group, if you have permissions you could also use the Tenant Root Management Group.
+>**Note**: We'll use our own Management Group, if you have permissions you could also use the Tenant Root Management Group.
 
 1. Launch the Azure Management Portal, and navigate to **Management Groups** under **All services**:
 
@@ -121,8 +120,7 @@ In this task, you will create a new Management Group and move a subscription int
 
     ![Azure portal screenshot, showing New Management Group, then the group ID and name being filled in.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image5.png "Create Management Group blade")
 
-    >[!NOTE]
-    >If this is the first management group being created, note that it may take up to 15 minutes for it to complete.
+>**Note**: If this is the first management group being created, note that it may take up to 15 minutes for it to complete.
 
     ![Azure portal screenshot showing the toast notification that notifies the user it may take up to 15 minutes to create the management group.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image90.png "Create management group toast notification")
 
@@ -190,8 +188,7 @@ In this exercise, you will apply one of the built-in Azure Policies to restrict 
 
     By altering the `-like` clause, you can filter to easily find the resource providers for the remaining resource types.
 
-    >[!NOTE]
-    > If you do not see the Microsoft.Compute resource provider it is because you have not yet created any compute resources. You can manually register the provider with the following command:
+    >**Note**: If you do not see the Microsoft.Compute resource provider it is because you have not yet created any compute resources. You can manually register the provider with the following command:
 
     ```powershell
     Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Compute
@@ -211,7 +208,7 @@ In this exercise, you will apply one of the built-in Azure Policies to restrict 
 
     - Definition location: **Enterprise Ready Cloud** (ERC) management group, as created in Task 1.
     - Name: **Service catalog**
-    - Description: **Restrict resource types to those permitted by Enterprise IT**
+    - Description: **Restrict resource types to those permitted by Enterprise IT**.
     - Category: **Create new** > **Service catalog**
     - Policy rule: ***Replace the default JSON with the following code:***
 
@@ -352,8 +349,8 @@ In this exercise, you will apply one of the built-in Azure Policies to restrict 
 8. On the ***Policy \- Definitions*** blade, select the **Service catalog** policy definition you just created and then select **Assign** on the *Service catalog* blade.
 
     ![Azure portal screenshot showing the service catalog policy definition.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image102.png "Service catalog policy definition")
-    >[!NOTE]
-    > If you do not see the policy, make sure "Enterprise Ready Cloud" is the selected scope, and not another Management group or an individual subscription.
+    
+    >**Note**: If you do not see the policy, make sure "Enterprise Ready Cloud" is the selected scope, and not another Management group or an individual subscription.
 
 9. On the ***Service catalog \- Assign policy blade***, specify the following configurations and then click **Assign** to assign your policy definition to your Enterprise Ready Cloud management group:
 
@@ -361,14 +358,14 @@ In this exercise, you will apply one of the built-in Azure Policies to restrict 
     - Exclusions: **None**
     - Policy definition: **Service catalog**
     - Assignment name: **Service catalog policy**
-    - Description: **Restrict resource types to those permitted by Enterprise IT**
+    - Description: **Restrict resource types to those permitted by Enterprise IT**.
     - Assigned by: **Enterprise IT**
 
     The assignment form should look like this:
 
     ![Azure portal screenshot, showing the Assign Policy blade. The Allowed resource types policy has been chosen, and 12 resource types selected.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image103.png "Assign Policy blade")
 
-    Click **Assign**
+    Click **Assign**.
 
 ### Task 3: Restrict the creation of ExpressRoute circuits
 
@@ -581,8 +578,7 @@ In this task, you will use the Azure management portal to validate each of the p
 
     ![Azure portal screenshot, showing Errors blade. The error message states the template deployment failed due to a policy violation.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image97.png "Policy Violation error message")
 
-    >[!NOTE]
-    >If you created a new resource group in the previous step, you will see that the resource group has been created even though the deployment of the resource failed. This is because the policy that was created to restrict the creation of ExpressRoute circuits specifically targets that Azure resource type and a resource group is another distinct resource type.
+    >**Note**: If you created a new resource group in the previous step, you will see that the resource group has been created even though the deployment of the resource failed. This is because the policy that was created to restrict the creation of ExpressRoute circuits specifically targets that Azure resource type and a resource group is another distinct resource type.
 
 #### Subtask 3: Test the resource location policy <!-- omit in toc -->
 
@@ -592,8 +588,7 @@ In this task, you will use the Azure management portal to validate each of the p
 
 2. To test further, change to a permitted location (e.g. East US) and try again. This time, the virtual network should be created without issue.
 
-    >[!NOTE]
-    >Recall that an initiative assignment was made earlier to deny the creation of resources that do not meet the organizational naming conventions. If you had attempted to create a virtual networking without `-vnet` in its name, the creation of the resource would have been denied by the initiative assignment and its associated configuration.
+    >**Note**: Recall that an initiative assignment was made earlier to deny the creation of resources that do not meet the organizational naming conventions. If you had attempted to create a virtual networking without `-vnet` in its name, the creation of the resource would have been denied by the initiative assignment and its associated configuration.
 
 #### Subtask 4: Test the naming convention policy <!-- omit in toc -->
 
@@ -628,8 +623,7 @@ In this task, you will create two groups in Azure AD that you will use for testi
 
     ![Azure portal screenshot showing the Azure Cloud Shell first launch experience.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image94.png "Azure Cloud Shell PowerShell")
 
-    >[!NOTE]
-    >In the following commands, we will use the Azure CLI to provision users and groups in Azure AD. The PowerShell Cloud Shell gives us access to *both* the Azure PowerShell module (Az) and the Azure CLI.
+    >**Note**: In the following commands, we will use the Azure CLI to provision users and groups in Azure AD. The PowerShell Cloud Shell gives us access to *both* the Azure PowerShell module (Az) and the Azure CLI.
 
 2. In the shell, execute the following script to create two new security groups:
 
@@ -713,8 +707,7 @@ In this task, you will update a script to automatically add a user to the contri
     $SubscriptionId = (Get-AzSubscription).SubscriptionId
     ```
 
-    >[!NOTE]
-    > If your account has access to multiple Azure subscriptions you may need to alter the command to target the proper subscription using the `-SubscriptionId` or `-SubscriptionName` parameter with the `Get-AzSubscription` cmdlet.
+    >**Note**: If your account has access to multiple Azure subscriptions you may need to alter the command to target the proper subscription using the `-SubscriptionId` or `-SubscriptionName` parameter with the `Get-AzSubscription` cmdlet.
 
 7. Execute the script passing in the `-SubscriptionID` and `-AdGroupName` parameters:
 
@@ -724,25 +717,23 @@ In this task, you will update a script to automatically add a user to the contri
 
 8. In a different type of browser, or in an In-Private or Incognito mode window in your current browser navigate to the Azure management portal in a browser <http://portal.azure.com>, and sign in using the **ElectronicsAdmin** credentials created earlier.
 
-    >[!NOTE]
-    > You may be prompted to configure a method of resetting your account. If you are, you can choose either a phone call or email.
+    >**Note**: You may be prompted to configure a method of resetting your account. If you are, you can choose either a phone call or email.
 
 9. Select **All services**, search for **Subscriptions**, and then select **Subscriptions**.
 
-    ![Azure portal screenshot, showing subscriptions button](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image112.png "Subscriptions button")
+    ![Azure portal screenshot, showing subscriptions button.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image112.png "Subscriptions button")
 
 10. Select the name of the subscription you have been working on.
 
 11. Select the **Access control (IAM)** tile and click the **Role assignments** tab:
 
-    ![Azure portal screenshot, showing \'Access Control (IAM)\' button](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image34.png "Access Control button")
+    ![Azure portal screenshot, showing \'Access Control (IAM)\' button.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image34.png "Access Control button")
 
 12. You should see the **BU-Electronics-Admins** group assigned to the contributor role.
 
     ![Under User, the BU-Electronics-Admin group is circled. It has the Role of Contributor, and Access as Assigned.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image113.png "BU-Electronics-Admin group")
 
-    >[!NOTE]
-    > Users in the Contributor role scoped at the subscription have full access to all the resources within the subscription, but cannot grant access to others or change policies on the subscription.
+    >**Note**: Users in the Contributor role scoped at the subscription have full access to all the resources within the subscription, but cannot grant access to others or change policies on the subscription.
 
 ### Task 4: Enable project-based delegation and chargeback with tags
 
@@ -819,8 +810,7 @@ In this task, you will create a script that will create a new resource group, as
 
     This code creates a new resource group in the specified region. It then assigns the group to the owner role definition just for the resource group. It will allow users in the group to have full ownership of resources within the resource group only. This code applies a built-in policy to append a tag with name 'IOCode' and another tag for 'CostCenter' and then applies the given tag value to any resource created in the resource group.
 
-    >[!NOTE]
-    >The 'Apply tag and its default value' policy applies tags to the resources included in the assignment scope, but it does not apply any tags to the parent resource group for those resources. It is important to understand that in Azure, tags are not automatically inherited from a parent object without additional configuration.
+    >**Note**: The 'Apply tag and its default value' policy applies tags to the resources included in the assignment scope, but it does not apply any tags to the parent resource group for those resources. It is important to understand that in Azure, tags are not automatically inherited from a parent object without additional configuration.
 
 5. Close **code** using the **Close Editor** command by clicking **Close Editor** in the menu behind the ellipsis (...).
 
@@ -837,11 +827,9 @@ In this task, you will create a script that will create a new resource group, as
     $SubscriptionId = (Get-AzSubscription).SubscriptionId
     ```
 
-    >[!NOTE]
-    > If your account has access to multiple Azure subscriptions you may need to alter the command to target the proper subscription using the `-SubscriptionId` or `-SubscriptionName` parameter with the `Get-AzSubscription` cmdlet.
+    >**Note**: If your account has access to multiple Azure subscriptions you may need to alter the command to target the proper subscription using the `-SubscriptionId` or `-SubscriptionName` parameter with the `Get-AzSubscription` cmdlet.
 
-    >[!NOTE]
-    >If you receive an error similar to the following `Get-AzSubscription : The access token expiry UTC time '4/24/2019 3:31:22 PM' is earlier than current UTC time '4/24/2019 3:44:34 PM'.` you can re-authenticate to your Azure account using the `Connect-AzAccount` cmdlet.
+    >>**Note**: If you receive an error similar to the following `Get-AzSubscription : The access token expiry UTC time '4/24/2019 3:31:22 PM' is earlier than current UTC time '4/24/2019 3:44:34 PM'.` you can re-authenticate to your Azure account using the `Connect-AzAccount` cmdlet.
 
 8. In the **Console** pane, execute the following command to create a new resource group with delegated permissions and IO Code and Cost Center policies scoped to the resource group.
 
@@ -869,8 +857,7 @@ In this task, you will create a script that will create a new resource group, as
 
     ![A screen of the output of the command Get-AzureRmResource -TagName CostCenter.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image98.png "PowerShell output")
 
-    >[!NOTE]
-    >It can take several minutes for the policies assignments that were made in the previous step to take effect. If you find that the tags were not automatically applied, delete the storage account and recreate it. After recreating it, you should see the tags applied with the `Get-AzResource` cmdlet.
+    >**Note**: It can take several minutes for the policies assignments that were made in the previous step to take effect. If you find that the tags were not automatically applied, delete the storage account and recreate it. After recreating it, you should see the tags applied with the `Get-AzResource` cmdlet.
 
 11. Switch back to the Azure Management portal using the ElectronicsAdmin credentials.
 
@@ -950,8 +937,7 @@ In this task, you will create a new Azure Blueprint and add several artifacts to
 
     ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected and the Require specified tag on resource groups policy definition highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image132.png "Add artifact policy definition selection")
 
-    >[!NOTE]
-    >In Exercise 2, Azure Policy was used to automatically tag resources as they were created in a resource group, but recall that any tags on the resource group itself were not inherited. Through this blueprint, we will ensure that the *IOCode* and *CostCenter* tags are enforced on each resource group that is created *and* that the tags that are set on the resource group are automatically inherited by any child resources.
+    >**Note**: In Exercise 2, Azure Policy was used to automatically tag resources as they were created in a resource group, but recall that any tags on the resource group itself were not inherited. Through this blueprint, we will ensure that the *IOCode* and *CostCenter* tags are enforced on each resource group that is created *and* that the tags that are set on the resource group are automatically inherited by any child resources.
 
 8. Click **+ Add artifact...** and then select **Policy assignment** for the **Artifact type** in the **Add artifact** blade.
 
@@ -961,8 +947,7 @@ In this task, you will create a new Azure Blueprint and add several artifacts to
 
     ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected and the Require specified tag on resource groups policy definition highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image132.png "Add artifact policy definition selection")
 
-    >[!NOTE]
-    > We need to add two of the same policy definition so we can enforce each tag for *IOCode* and *CostCenter*.
+    >**Note**: We need to add two of the same policy definition so we can enforce each tag for *IOCode* and *CostCenter*.
 
 10. Click **+ Add artifact...** and then select **Policy assignment** for the **Artifact type** in the **Add artifact** blade.
 
@@ -980,8 +965,7 @@ In this task, you will create a new Azure Blueprint and add several artifacts to
 
     ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected and the Append tag and its value from the resource group policy definition highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image123.png "Add artifact policy definition selection")
 
-    >[!NOTE]
-    >We need to add two of the same policy definition so we can ensure each tag for *IOCode* and *CostCenter* is replicated from the resource group to any child resources.
+    >**Note**: We need to add two of the same policy definition so we can ensure each tag for *IOCode* and *CostCenter* is replicated from the resource group to any child resources.
 
 14. Click **+ Add artifact...** and then select **Azure Resource Manager template (Subscription)** for the **Artifact type** in the **Add artifact** blade.
 
@@ -1092,8 +1076,7 @@ In this task, you will create a new Azure Blueprint and add several artifacts to
 
     ![Add artifact blade in the Azure portal for an Azure Resource Manager template (Subscription) artifact with the Add button highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image126.png "Add artifact")
 
-    >[!NOTE]
-    >The template parameters will be determined at the time the blueprint is assigned. This allows us flexibility if we need to make a blueprint assignment multiple times and have it maintain a dynamic nature.
+    >**Note**: The template parameters will be determined at the time the blueprint is assigned. This allows us flexibility if we need to make a blueprint assignment multiple times and have it maintain a dynamic nature.
 
 17. Save the blueprint as a draft by clicking the **Save Draft** button.
 
@@ -1310,7 +1293,7 @@ The policy required to audit for the match of a given tag name and value is a cu
         - Value(s): **Use Initiative Parameter**
           - **TAGNAME_2**
 
-    The form should looking like the following:
+    The form should look like the following:
 
     ![Creation of a new initiative definition at the ERC scope.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image146.png "New initiative definition")
 
@@ -1390,8 +1373,7 @@ The policy required to audit for the match of a given tag name and value is a cu
 
     ![The blueprint assignment blade in the Azure portal for the governance-baseline blueprint with the Assignment succeeded message highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image156.png "governance-baseline blueprint assignment")
 
-    >[!NOTE]
-    >Notice that because we used the same values for the resource group and storage account prefix parameters, the Azure Resource Manager template artifact in the blueprint assignment was able to reconcile the existing resources not and not create new ones.
+    >**Note**: Notice that because we used the same values for the resource group and storage account prefix parameters, the Azure Resource Manager template artifact in the blueprint assignment was able to reconcile the existing resources not and not create new ones.
 
 ### Task 7: Verify compliance with Azure Policy
 
@@ -1418,8 +1400,7 @@ In this task you will explore the compliance features of Azure Policy by working
 
     ![Azure Cloud Shell screenshot showing the move request for a resource from one resource group to another.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image157.png "Azure Cloud Shell PowerShell")
 
-    >[!NOTE]
-    >It was take several minutes for the move to complete. Do not proceed to the next step until the script has completed.
+    >**Note**: It will take several minutes for the move to complete. Do not proceed to the next step until the script has completed.
 
 4. Execute the following script to view the tags on the *MarketingRG* resource group and the moved storage account. Do the tags match?
 
@@ -1432,8 +1413,7 @@ In this task you will explore the compliance features of Azure Policy by working
     }
     ```
 
-    >[!NOTE]
-    >In this case the tags to not match. The Azure Policy which appends tags from the resource group to child resources only effects create and update operations and not move operations.
+    >**Note**: In this case the tags to not match. The Azure Policy which appends tags from the resource group to child resources only effects create and update operations and not move operations.
 
 5. In addition to Azure PowerShell and the Azure CLI, Azure Policy can be used to view the compliance of your resources through both the Azure portal and the command line.
 
@@ -1449,8 +1429,7 @@ In this task you will explore the compliance features of Azure Policy by working
 
     ![A screenshot of the Policy compliance blade in the Azure Portal for the Governance Baseline Initiative with one of the Audit tag and its value from the resource group policies highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image160.png "Policy compliance")
 
-    >[!NOTE]
-    >This is an audit policy, not a deny policy, so it does not prevent the creation of resources, but it can surface resource that do not meet your organizational standards and offer a clear line of sight to remediation.
+    >**Note**: This is an audit policy, not a deny policy, so it does not prevent the creation of resources, but it can surface resource that do not meet your organizational standards and offer a clear line of sight to remediation.
 
 9. You may (or may not) see the non-compliant state of the storage account that was moved earlier. Azure policy compliance checks do not currently have a published SLA for how long it takes an initial compliance check to occur or how long it takes for ongoing compliance checks to occur.
 
@@ -1486,8 +1465,7 @@ After completing the hands-on lab, you will remove the policies on your subscrip
 
 10. Remove any resource groups created during this lab. 
 
-   >[!NOTE]
-   >This will also delete any resources in those resource groups.
+   >**Note**: This will also delete any resources in those resource groups.
 
 11. Navigate to the **Azure Active Directory** blade.
 
