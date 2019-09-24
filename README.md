@@ -6,11 +6,13 @@ Even as large as it is, Trey seeks to maximize the cost-effectiveness and flexib
 
 Trey is interested in a large-scale solution that will help mitigate creeping costs and start the transition to a modern cloud-based enterprise architecture using a solid set of controls for governance.
 
+August 2019
+
 
 ## Target audience
 - Infrastructure Architect
 
-## Abstract
+## Abstracts
 
 ### Workshop
 
@@ -47,3 +49,16 @@ DC Migration
 
 ## Related references
 - [MCW](https://microsoftcloudworkshop.com)
+
+## Help & Support
+
+We welcome feedback and comments from Microsoft SMEs & learning partners who deliver MCWs.  
+
+***Having trouble?***
+- First, verify you have followed all written lab instructions (including the Before the Hands-on lab document).
+- Next, submit an issue with a detailed description of the problem.
+- Please do not submit pull requests. Our authors will review open issues and submit pull requests, as needed, for approval.  
+
+If you are planning to present a workshop, *review and test the materials early*! We recommend at least two weeks prior.
+
+### Please allow 5 - 10 business days for review and resolution of issues.
