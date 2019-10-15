@@ -1,4 +1,4 @@
-![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
+![Microsoft Cloud Workshops](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
 Enterprise-ready cloud
@@ -53,7 +53,7 @@ To validate that you have Global Administrator access to your Azure AD tenant, w
 
 1. Sign in to the [Azure portal](https://portal.azure.com/) or the [Azure Active Directory admin center](https://aad.portal.azure.com/) as a Global Administrator.
 
-2. In the navigation list, click **Azure Active Directory** and then click **Properties**.
+2. In the navigation list, choose **Azure Active Directory** and then select **Properties**.
 
     ![Azure Active Directory Properties blade in the Azure portal.](images/Setup/image1.png "Properties blade")
 
@@ -63,13 +63,13 @@ To validate that you have Global Administrator access to your Azure AD tenant, w
 
     > **Note**: When you set the toggle to Yes, you are assigned the User Access Administrator role in Azure RBAC at the root scope (/). This grants you permission to assign roles in all Azure subscriptions and management groups associated with this Azure AD directory. This toggle is only available to users who are assigned the Global Administrator role in Azure AD.
 
-4. Click **Save** to save your setting.
+4. Select **Save** to save your setting.
 
     ![Azure Active Directory Properties blade in the Azure portal with the Save button highlighted.](images/Setup/image4.png "Properties blade - Save button")
 
     > **Note**: This setting is not a global property and applies only to the currently signed in user. You can't elevate access for all members of the Global Administrator role.
 
-5.  Login to <http://portal.azure.com>, click on **All Services**, and type in **Azure Active Directory**.
+5.  Login to <http://portal.azure.com>, select **All Services**, and type in **Azure Active Directory**.
 
 6. Sign out and sign back in to refresh your access.
 
