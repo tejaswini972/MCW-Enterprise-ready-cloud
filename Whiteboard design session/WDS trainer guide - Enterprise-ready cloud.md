@@ -212,7 +212,7 @@ Rather than re-invent the wheel, the Cloud Governance team have decided to adopt
 
 Trey Research has three business units: Industrial and Consumer, Electronics, and Life Sciences. Each of the Business Units has the same subunits: Product development, Marketing, and Sales and Support. Sales and Support is further divided into region subunits (US/EU/Asia). This hierarchy is shown in the following diagram:
 
-![Trey Research has three business units: Industrial and Consumer, Electronics, and Life Sciences. Each of the Business Units has the same subunits: Product development, Marketing, and Sales and Support. Sales and Support is further divided into region subunits (US/EU/Asia). ](images/org-chart.png "Trey Research organizational flowchart")
+![Trey Research has three business units: Industrial and Consumer, Electronics, and Life Sciences. Each of the Business Units has the same subunits: Product development, Marketing, and Sales and Support. Sales and Support is further divided into region subunits (US/EU/Asia).](images/org-chart.png "Trey Research organizational flowchart")
 
 Each business unit and subunit are allocated an Azure quota/budget and is responsible for tracking their expenditure within that budget. Within a business unit, each new project should track its consumption using a specific tag for its IO code within the business unit.
 
@@ -539,7 +539,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     Cost analysis, budgets and alerts can be defined at a variety of scopes, from management groups to subscriptions to individual resource groups (see the cost management features on the respective management group, subscription and resource group blades). Information from cost analysis can also be downloaded through a detailed .csv with any filters or groupings applied to the exported data.
 
-    ![The Download button is visible in the cost analysis blade](images/download-billing.png "Cost analysis download button")
+    ![The Download button is visible in the cost analysis blade.](images/download-billing.png "Cost analysis download button")
 
     > **Note:** Users must be assigned the Cost Management Reader role at the appropriate scope to have access to cost analysis reports. These permissions are also included in the Reader, Contributor and Owner roles.
     >
@@ -742,7 +742,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     Instead, an alternative approach is to modify the list of resource types in the 'Allowed Resource Types' policy assignment to add the new resource type. The requirement to limit the types of resources is maintained, but in this state the resource can deployed everywhere, which is often not desirable for one-off deployments. To restrict the scope at which these one-off resources can be deployed, a second built-in policy **Not Allowed Resource Types** is assigned, again at the management group scope, blocking just this new resource type everywhere except on an exception scope defined in this second policy assignment.
 
-    ![A diagram showing two policies. 'Allowed resource types' lists commonly-used resource types plus the 'pilot resource type'. 'Not allowed resource types' also includes the pilot resource type, with an exclusion scope for the permitted pilot deployment](images/policy-pilot.png "Policies for piloting limited use of a new resource type")
+    ![A diagram showing two policies. 'Allowed resource types' lists commonly-used resource types plus the 'pilot resource type'. 'Not allowed resource types' also includes the pilot resource type, with an exclusion scope for the permitted pilot deployment.](images/policy-pilot.png "Policies for piloting limited use of a new resource type")
 
     This alternative approach has the advantage of allowing exceptions that are limited both in the scope at which the exception is granted, and in the type of resource permitted.
 
@@ -870,32 +870,32 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 1.  Per-subscription configuration won't scale to an organization the size of Trey Research. How can governance controls be implemented with minimum per-subscription configuration overhead?
 
-Azure subscriptions should be grouped into a management group hierarchy. The root of this hierarchy is the tenant root management group. Under this root, a tree of management groups can be implemented to represent the business units and sub-units within the organization. Each Azure subscription is then assigned to a management group node within this tree.
+    Azure subscriptions should be grouped into a management group hierarchy. The root of this hierarchy is the tenant root management group. Under this root, a tree of management groups can be implemented to represent the business units and sub-units within the organization. Each Azure subscription is then assigned to a management group node within this tree.
 
-Many Azure governance controls be assigned at the management group scope, which means they apply across all subscriptions under that management group node. This enables a single configuration to apply consistently and reliably across a large number of subscriptions.  Supported controls include Azure policy and Azure role-based access control. In addition, Azure Advisor, Security Center, and Activity Logs all support management group views.
+    Many Azure governance controls be assigned at the management group scope, which means they apply across all subscriptions under that management group node. This enables a single configuration to apply consistently and reliably across a large number of subscriptions.  Supported controls include Azure policy and Azure role-based access control. In addition, Azure Advisor, Security Center, and Activity Logs all support management group views.
 
 
 2.  As well as implementing our governance rules on how Azure is used, we need a way to audit that no deployments have been made that bypass those rules. This audit needs to scale across the entire organization.
 
-Implement governance rules using Azure Policy and assign those Policies at the root tenant management group scope. This ensures the policy is applied across all subscriptions within the organization.
+    Implement governance rules using Azure Policy and assign those Policies at the root tenant management group scope. This ensures the policy is applied across all subscriptions within the organization.
 
-As well as controlling resource deployments, Azure policy provides compliance reports to identify any out-of-policy resource. Deploying the policy at the tenant root management group scope provides a single report for all resources in the organization. If more fine-grained reporting is required, this can be achieved by deploying the policy at the appropriate scope.
+    As well as controlling resource deployments, Azure policy provides compliance reports to identify any out-of-policy resource. Deploying the policy at the tenant root management group scope provides a single report for all resources in the organization. If more fine-grained reporting is required, this can be achieved by deploying the policy at the appropriate scope.
 
 
 3.  How can we ensure our deployments meet Azure security best practices, and how can we protect our Production workloads even if the security perimeter is compromised?
 
-Azure Security Center allows you to define your VM security policy, monitor compliance, and receive actionable recommendations on how to implement Azure security best practices. Adaptive Application Controls, available in the Azure Security Center Standard pricing tier, enable you to control whitelists of which executables can run in your Production environments.
+    Azure Security Center allows you to define your VM security policy, monitor compliance, and receive actionable recommendations on how to implement Azure security best practices. Adaptive Application Controls, available in the Azure Security Center Standard pricing tier, enable you to control whitelists of which executables can run in your Production environments.
 
 
 4.  How can Azure help control the costs associated with non-Production VMs left running out-of-hours?
 
-DevTest labs, auto-VM shutdown, and the start-stop VM marketplace solution, all offer the ability to automatically shut down VMs.
+    DevTest labs, auto-VM shutdown, and the start-stop VM marketplace solution, all offer the ability to automatically shut down VMs.
 
-Azure Advisor and Azure Cost Management (by Cloudyn) provides additional reports to identify idle VMs and to right-size underutilized VMs.
+    Azure Advisor and Azure Cost Management (by Cloudyn) provides additional reports to identify idle VMs and to right-size underutilized VMs.
 
 
 ## Customer quote (to be read back to the attendees at the end)
 
 "The governance controls Azure provides allows Trey Research to move forward with a modern enterprise cloud environment knowing that IT still is in control but allows flexibility for our business units to do their job without us in the way."
 
----Ken Greenwald, CTO
+Ken Greenwald, CTO
