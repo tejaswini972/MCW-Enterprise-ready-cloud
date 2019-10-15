@@ -86,7 +86,7 @@ Rather than re-invent the wheel, the Cloud Governance team have decided to adopt
 
 Trey Research has three business units: Industrial and Consumer, Electronics, and Life Sciences. Each of the Business Units has the same subunits: Product development, Marketing, and Sales and Support. Sales and Support is further divided into region sub-units (US/EU/Asia). This hierarchy is shown in the following diagram:
 
-![Trey Research has three business units: Industrial and Consumer, Electronics, and Life Sciences. Each of the Business Units has the same subunits: Product development, Marketing, and Sales and Support. Sales and Support is further divided into region subunits (US/EU/Asia). ](images/org-chart.png "Trey Research organizational flowchart")
+![Trey Research has three business units: Industrial and Consumer, Electronics, and Life Sciences. Each of the Business Units has the same subunits: Product development, Marketing, and Sales and Support. Sales and Support is further divided into region subunits (US/EU/Asia).](images/org-chart.png "Trey Research organizational flowchart")
 
 Each business unit and subunit are allocated an Azure quota/budget and is responsible for tracking their expenditure within that budget. Within a business unit, each new project should track its consumption using a specific tag for its IO code within the business unit.
 
