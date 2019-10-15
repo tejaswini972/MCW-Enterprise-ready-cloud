@@ -641,11 +641,13 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     ![A screenshot of the Azure activity log](images/activity-log.png "Azure activity log")
 
-    However, the activity log does not provide details of exactly which resource properties were changed, nor the before/after values of those properties. This data is available from the change history feature of the Azure resource graph (currently in public preview).
-
-    To view the change history for a resource in the Azure portal, identify and click on the resource in any Azure policy compliance report (the compliance status of the resource doesn't matter). Then click the **Change History (preview)** tab.
+    Below is an example of the Azure Activity Log providing details of exactly which resource properties were changed. Details are displayed for the properties of the resource either before or after the values have been changed due to configuration updates or regular deployments through automation for example. This data is available from the change history feature of the Azure resource graph (currently in public preview).
 
     ![A screenshot of the change history tab for a resource in Azure policy](images/change-history-tab.png "Change history tab")
+
+    To view the change history for a resource in the Azure portal, identify and click on the resource in the **Activity Log**. Then click the **Change History (preview)** tab.
+
+    
 
     This tab shows a list of timestamps for each change. Click on a timestamp to see a visual diff of the change.
 
