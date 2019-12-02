@@ -60,7 +60,7 @@ Directions: With all participants in the session, the facilitator/SME presents a
 
 1. Meet your table participants and trainer.
 
-2. Read all of the directions for steps 1-3 in the student guide.
+2. Read all the directions for steps 1-3 in the student guide.
 
 3. As a table team, review the following customer case study.
 
@@ -131,7 +131,7 @@ Increased agility is one of Trey's primary motivation for adopting the cloud. Th
 
 However, they are also concerned about how to maintain consistency and control across environments.  They are concerned that production and test environments may diverge over time. However, they can't use identical automation in both environments, since test environments are often scaled differently to production to save costs.
 
-The Cloud Governance team has developed best-practice reference implementations for commonly-deployed services, such as a DMZ network or a pair of web servers. They are looking for a way to automate these deployments. They recognize that these best practices will evolve over time, and so are also looking for a way to track existing deployments to ensure updates are rolled out consistently. In addition, where resources are deployed following Cloud Governance team best practices, individual business units should not be able to modify the configuration of those resources.
+The Cloud Governance team has developed best-practice reference implementations for commonly deployed services, such as a DMZ network or a pair of web servers. They are looking for a way to automate these deployments. They recognize that these best practices will evolve over time, and so are also looking for a way to track existing deployments to ensure updates are rolled out consistently. In addition, where resources are deployed following Cloud Governance team best practices, individual business units should not be able to modify the configuration of those resources.
 
 ### Customer needs
 
