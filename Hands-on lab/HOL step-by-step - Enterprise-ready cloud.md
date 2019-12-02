@@ -130,7 +130,7 @@ In this task, you will create a new Management Group and move a subscription int
 
     ![Azure portal screenshot showing the toast notification that notifies the user it may take up to 15 minutes to create the management group.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image90.png "Create management group toast notification")
 
-4. Select the newly-created management group, then select **details**.
+4. Select the newly created management group, then select **details**.
 
     ![Azure portal screenshot showing the details link for the newly created management group.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image92.png "Details link")
 
@@ -181,7 +181,7 @@ In this exercise, you will apply one of the built-in Azure Policies to restrict 
     - SQL Database
     ```
 
-    For example, to find all of the resource providers with resource groups as a resource type, a query like the following could be used:
+    For example, to find all the resource providers with resource groups as a resource type, a query like the following could be used:
 
     ```powershell
     Get-AzResourceProvider `
@@ -401,7 +401,7 @@ In this exercise, you will apply another built-in Azure policy to restrict the c
 
 4. When complete, select **Next** to set the Parameters in the policy assignment.
 
-5. From the drop down list select the option **expressRouteCircuits** from the drop down list.
+5. From the drop-down list select the option **expressRouteCircuits**.
 
 6. Your Assign policy screen should look like the below screen shot. Once confirmed select the **Create** button.
 
@@ -427,7 +427,7 @@ In this exercise, you will create a new Azure Policy assignment that restricts t
 
 2. When complete, select **Next** to set the Parameters on the policy assignment.
 
-3. Within the Allowed Locations drop down menu, select the following options:
+3. Within the Allowed Locations drop-down menu, select the following options:
 
     - Allowed locations: **East US, West US, North Europe, West Europe, Japan East, Japan West**
 
@@ -562,7 +562,7 @@ Next, we shall create a policy initiative comprising multiple instances of our p
 
 ### Task 6: Test the policies
 
-In this task, you will use the Azure management portal to validate each of the policies created so far, and understand how to identify policy events.
+In this task, you will use the Azure management portal to validate each of the policies created so far and understand how to identify policy events.
 
 #### Subtask 1: Test the service catalog policy <!-- omit in toc -->
 
@@ -570,7 +570,7 @@ In this task, you will use the Azure management portal to validate each of the p
 
     ![Azure portal screenshot, showing selection sequence to create an IoT Hub resource](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image19.png "Create IoT hub Azure portal selection path")
 
-2. Specify a unique name for the IoT Hub, and choose an existing resource group. Choose a permitted location (we are only testing the Service Catalog policy at this time).
+2. Specify a unique name for the IoT Hub and choose an existing resource group. Choose a permitted location (we are only testing the Service Catalog policy at this time).
 
     Once all the settings have been filled in, select **Review + create** followed by **Create**.
 
@@ -704,7 +704,7 @@ In this task, you will update a script to automatically add a user to the contri
     code
     ```
 
-3. Add the following code to script, and save the file. This code will retrieve the object ID for the Active Directory group passed in and assign the group to the Contributor role on the subscription.
+3. Add the following code to script and save the file. This code will retrieve the object ID for the Active Directory group passed in and assign the group to the Contributor role on the subscription.
 
     ```powershell
     param([string]$SubscriptionId, [string]$AdGroupName)
@@ -762,7 +762,7 @@ In this task, you will update a script to automatically add a user to the contri
 
     ![Under User, the BU-Electronics-Admin group is circled. It has the Role of Contributor, and Access as Assigned.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image113.png "BU-Electronics-Admin group")
 
-    > **Note**: Users in the Contributor role scoped at the subscription have full access to all the resources within the subscription, but cannot grant access to others or change policies on the subscription.
+    > **Note**: Users in the Contributor role scoped at the subscription have full access to all the resources within the subscription but cannot grant access to others or change policies on the subscription.
 
 ### Task 4: Enable project-based delegation and chargeback with tags
 
@@ -912,7 +912,7 @@ In this task, you will create a script that will create a new resource group, as
 
     ![BU-Electronics-Users is circled.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image42.png "BU-Electronics-Users")
 
-Now both the security groups **BU-Electronics-Admins** and **BU-Electronics-Users** are both Owners of at the **DelegatedProjectDemoRG** scope and members of each security group have full control over the resource group and all of its resources.
+Now both the security groups **BU-Electronics-Admins** and **BU-Electronics-Users** are both Owners of at the **DelegatedProjectDemoRG** scope and members of each security group have full control over the resource group and all its resources.
 
 ## Exercise 3: Use Azure Blueprints to govern your Azure environment
 
@@ -966,7 +966,7 @@ In this task, you will create a new Azure Blueprint and add several artifacts to
 
     ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected and the Require specified tag on resource groups policy definition highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image132.png "Add artifact policy definition selection")
 
-    > **Note**: In Exercise 2, Azure Policy was used to automatically tag resources as they were created in a resource group, but recall that any tags on the resource group itself were not inherited. Through this blueprint, we will ensure that the *IOCode* and *CostCenter* tags are enforced on each resource group that is created *and* that the tags that are set on the resource group are automatically inherited by any child resources.
+    > **Note**: In Exercise 2, Azure Policy was used to automatically tag resources as they were created in a resource group but recall that any tags on the resource group itself were not inherited. Through this blueprint, we will ensure that the *IOCode* and *CostCenter* tags are enforced on each resource group that is created *and* that the tags that are set on the resource group are automatically inherited by any child resources.
 
 8. Select **+ Add artifact...** and then select **Policy assignment** for the **Artifact type** in the **Add artifact** blade.
 
@@ -1332,7 +1332,7 @@ To simplify the management of our blueprint, next we will create a new initiativ
 
     ![Creation of a new initiative definition at the ERC scope.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image146.png "New initiative definition")
 
-4. Select **Save**. This new initiative definition allows us to consolidate all of the policy assignments in our existing blueprint to ensure the presence of the *IOCode* and *CostCenter* tags on resource groups and that child resources not only have those tags, but that their values match the parent resource group as well.
+4. Select **Save**. This new initiative definition allows us to consolidate all the policy assignments in our existing blueprint to ensure the presence of the *IOCode* and *CostCenter* tags on resource groups and that child resources not only have those tags, but that their values match the parent resource group as well.
 
 #### Subtask 3: Update the blueprint definition <!-- omit in toc -->
 
@@ -1464,7 +1464,7 @@ In this task you will explore the compliance features of Azure Policy by working
 
     ![A screenshot of the Initiative compliance blade in the Azure Portal for the Governance Baseline Initiative with one of the Audit tag and its value from the resource group policies highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image159.png "Initiative compliance")
 
-8. On the **Policy compliance** blade, you can view all of the non-compliant resources.
+8. On the **Policy compliance** blade, you can view all the non-compliant resources.
 
     ![A screenshot of the Policy compliance blade in the Azure Portal for the Governance Baseline Initiative with one of the Audit tag and its value from the resource group policies highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image160.png "Policy compliance")
 
@@ -1537,7 +1537,7 @@ In this task you will create the Virtual Machine resource that will be used for 
 
 8. Repeat step 7 again this time selecting the **Standard DS1 v2** SKU to change it back to the default.
 
-    > **Note**: This was done to generate activity for the log review later in the exercise. Also this is to validate that the machine SKU can be changed without restriction.
+    > **Note**: This was done to generate activity for the log review later in the exercise. Also, this is to validate that the machine SKU can be changed without restriction.
 
 9. From the Azure Portal navigate to the **Activity Log** and select the Operation Name **Create or Update Virtual Machine**.
 
@@ -1567,7 +1567,7 @@ In this task you will create a management group and assign a policy that contain
 
 5. Select the **+ Add Subscription** option and then choose your subscription.
 
-6. Once your subscription is selected from the drop down menu select the **Save** button to complete the configuration.
+6. Once your subscription is selected from the drop-down menu select the **Save** button to complete the configuration.
 
 7. Navigate to **CMCRG Resource Group** and select **Policy** within the Azure portal.
 
@@ -1575,7 +1575,7 @@ In this task you will create a management group and assign a policy that contain
 
 8. Select **Definitions**.
 
-9. On the **Definitions blade**, select **Category** and then from the drop down **Compute** only.
+9. On the **Definitions blade**, select **Category** and then from the drop-down **Compute** only.
 
 10. Next, select **Allowed virtual machine SKUs**
 
@@ -1589,7 +1589,7 @@ In this task you will create a management group and assign a policy that contain
 
 13. In the **Basics** form under, enter the following values:
 
-    - Policy definition : **Leave Defaulted**
+    - Policy definition: **Leave Defaulted**
     - Name: **Allow D Series SKU**
     - Description: **Allow only some SKU options for the D Series**
     - Policy enforcement: **Enabled**
@@ -1668,7 +1668,7 @@ In this task you will create a Budget to ensure accountability within the organi
 
     ![Email screenshot, showing the set action group alert. ](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image187.png "Create Budget email confirmation")
 
-11. You will also receive an email later on in the exercise regarding the Budget alert set earlier.
+11. You will also receive an email later in the exercise regarding the Budget alert set earlier.
 
     ![Email screenshot showing the budget alert. ](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image190.png "Budget email confirmation alert")
 
@@ -1682,7 +1682,7 @@ After completing the hands-on lab, you will remove the policies on your subscrip
 
     ![Azure portal screenshot, showing the Policy - Compliance blade. The Policies option has been selected, and the compliance management is shown.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image189.png "Policy-Compliance blade")  
 
-2. Delete the **CMCRG** to remove the virtual machine and all of the other resources created as its dependencies.
+2. Delete the **CMCRG** to remove the virtual machine and all the other resources created as its dependencies.
 
 ## After the hands-on lab
 
@@ -1696,9 +1696,9 @@ After completing the hands-on lab, you will remove the policies on your subscrip
 
 4. Navigate to the **Policy** blade.
 
-5. Select **Assignments**, and delete all policy assignments created during this lab.
+5. Select **Assignments** and delete all policy assignments created during this lab.
 
-6. Select **Definitions**, and delete any policy definitions or initiative definitions created during this lab.
+6. Select **Definitions** and delete any policy definitions or initiative definitions created during this lab.
 
 7. Navigate to the **Management Groups** blade.
 
