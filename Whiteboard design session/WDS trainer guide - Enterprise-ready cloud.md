@@ -164,7 +164,7 @@ Directions: With all participants in the session, the facilitator/SME presents a
 
 1. Meet your table participants and trainer.
 
-2. Read all of the directions for steps 1-3 in the student guide.
+2. Read all the directions for steps 1-3 in the student guide.
 
 3. As a table team, review the following customer case study.
 
@@ -235,7 +235,7 @@ Increased agility is one of Trey's primary motivation for adopting the cloud. Th
 
 However, they are also concerned about how to maintain consistency and control across environments.  They are concerned that production and test environments may diverge over time. However, they can't use identical automation in both environments, since test environments are often scaled differently to production to save costs.
 
-The Cloud Governance team has developed best-practice reference implementations for commonly-deployed services, such as a DMZ network or a pair of web servers. They are looking for a way to automate these deployments. They recognize that these best practices will evolve over time, and so are also looking for a way to track existing deployments to ensure updates are rolled out consistently. In addition, where resources are deployed following Cloud Governance team best practices, individual business units should not be able to modify the configuration of those resources.
+The Cloud Governance team has developed best-practice reference implementations for commonly deployed services, such as a DMZ network or a pair of web servers. They are looking for a way to automate these deployments. They recognize that these best practices will evolve over time, and so are also looking for a way to track existing deployments to ensure updates are rolled out consistently. In addition, where resources are deployed following Cloud Governance team best practices, individual business units should not be able to modify the configuration of those resources.
 
 ### Customer needs
 
@@ -585,7 +585,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 1. **Design:** Following an outage, how can you identify and analyze any recent changes which may have contributed? Investigations will require details of which resource was changed, when it was changed, who made the change, and what was changed. How can you track changes to both resource properties (capturing both before and after state) as well as changes inside a virtual machine?
 
-    **Solution:** The Azure activity log provides a full history of changes to the configuration of Azure resources. It shows when changes were made, and which account made the changes. The log can be filtered in many ways (resource type, resource group, time, event severity, etc.) and also exported as a CSV for processing off-line.
+    **Solution:** The Azure activity log provides a full history of changes to the configuration of Azure resources. It shows when changes were made, and which account made the changes. The log can be filtered in many ways (resource type, resource group, time, event severity, etc.) and exported as a CSV for processing off-line.
 
     ![A screenshot of the Azure activity log](images/activity-log.png "Azure activity log")
 
@@ -603,7 +603,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     The change history only captures changes to resource properties. It does not capture changes that occur within an Azure VM. To monitor VM changes, the Azure Automation Change Tracking solution should be used. Supporting both Windows and Linux, this solution tracks VM changes including files, registry keys, services/daemons, and software deployments. For more information, see <https://docs.microsoft.com/azure/automation/automation-change-tracking>.
 
-    Azure Services such as Network Watcher can be implemented to ensure that traffic from non-malicious sources are flowing in and out of the network along the routes intended for service and access. Deeper telemetry can be gathered when combined with the Log Analytics Service which can be used to collect and query Network Performance. The detection of network issues like traffic black holing and routing errors are easily detected as well as outages which will inform the the Security team before the users do.
+    Azure Services such as Network Watcher can be implemented to ensure that traffic from non-malicious sources are flowing in and out of the network along the routes intended for service and access. Deeper telemetry can be gathered when combined with the Log Analytics Service which can be used to collect and query Network Performance. The detection of network issues like traffic black holing and routing errors are easily detected as well as outages which will inform the Security team before the users do.
 
     ![A screenshot of the network watcher traffic analytics blade. The blade highlights network traffic of a Virtual Network.](images/image196.png "Traffic Analytics Blade")
 
@@ -690,7 +690,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 1. **Design:** Identify a solution to restrict which services can be used in each Azure subscription, across the company. How will your solution allow exceptions for specific resource types for approved pilot projects or one-off deployments?
 
-    **Solution:** The Cloud Governance team will use Azure policy to control which Azure resources can be created, and also to grant exceptions.
+    **Solution:** The Cloud Governance team will use Azure policy to control which Azure resources can be created, and to grant exceptions.
 
     The first policy be the built-in policy **Allowed Resource Types**. They will choose each resource type that is permitted for use and assign the policy at management group scope for the business units or even the entire organization.
 
@@ -712,7 +712,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     Azure resource locks are used to 'lock' a resource against accidental changes. There are two types of lock: 'Read Only' locks prevent all changes. 'Do Not Delete' locks allow a resource to be modified, but not deleted.
 
-    Azure resource locks can be assigned at the subscription, resource group, or resource level (they cannot be assigned at management group scope). They apply to all resources within that scope. For example, a 'Do not delete' lock on a resource group prevents any resource in that resource group from being deleted, but does not impact resources in other resource groups.
+    Azure resource locks can be assigned at the subscription, resource group, or resource level (they cannot be assigned at management group scope). They apply to all resources within that scope. For example, a 'Do not delete' lock on a resource group prevents any resource in that resource group from being deleted but does not impact resources in other resource groups.
 
     Any attempt to delete or modify a resource that is subject to a 'Read Only' lock will fail, as will attempts to delete a resource subject to a 'Do Not Delete' lock. The lock must first be removed, then re-created if necessary, once the change has been made.
 
@@ -749,7 +749,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     ```
 
-   The above example shows how to enforce a simple naming constraint on a single resource type -- virtual machines. Enterprise IT need to enforce their convention across all their resource types. Implementing this in a single policy requires an impractically-large conditional logic in the policy rule.
+   The above example shows how to enforce a simple naming constraint on a single resource type -- virtual machines. Enterprise IT need to enforce their convention across all their resource types. Implementing this in a single policy requires an impractically large conditional logic in the policy rule.
 
    Instead, separate policies should be created for each resource type. These policies should then be combined into a single *policy initiative.* Using a policy initiative allows the entire set of policies to be assigned in a single operation. It also allows new naming rules to be added easily---simply add the new rule to the initiative and it will be applied across all existing assignments.
 
@@ -801,7 +801,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 1. **Design:** How can Trey implement an 'Infrastructure as Code' approach to deployment automation, while still allowing different footprints in different environments?
 
-    **Solution:** Resource manager templates provide a declarative means to deploy Azure resources. Each template file describes all the resources to be deployed, and Azure takes care of the deployment process. This provides a fully-automated way to deploy entire applications, including all networking, storage, compute and other components.
+    **Solution:** Resource manager templates provide a declarative means to deploy Azure resources. Each template file describes all the resources to be deployed, and Azure takes care of the deployment process. This provides a fully automated way to deploy entire applications, including all networking, storage, compute and other components.
 
     Template files can be stored and managed similarly to source code, using a repository. This provides a central archive with version control.
 
@@ -813,7 +813,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     Azure blueprints build on top of Azure templates. Each blueprint specifies a collection of artifacts to deploy---these can include templates, policy, and role-based access control permissions.
 
-    Unlike templates, blueprints are stored and managed inside Azure. They are fully versioned, and each deployment is tracked. This allows you to easily identify all deployments of a particular blueprint. The blueprint version for each deployment is also tracked, enabling controlled roll-out of updated versions across deployments.
+    Unlike templates, blueprints are stored and managed inside Azure. They are fully versioned, and each deployment is tracked. This allows you to easily identify all deployments of a blueprint. The blueprint version for each deployment is also tracked, enabling controlled roll-out of updated versions across deployments.
 
 3. **Design:** How can the Cloud Governance team prevent best-practice reference implementation deployments from being modified outside of their control?
 
@@ -827,7 +827,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     Azure subscriptions should be grouped into a management group hierarchy. The root of this hierarchy is the tenant root management group. Under this root, a tree of management groups can be implemented to represent the business units and sub-units within the organization. Each Azure subscription is then assigned to a management group node within this tree.
 
-    Many Azure governance controls be assigned at the management group scope, which means they apply across all subscriptions under that management group node. This enables a single configuration to apply consistently and reliably across a large number of subscriptions.  Supported controls include Azure policy and Azure role-based access control. In addition, Azure Advisor, Security Center, and Activity Logs all support management group views.
+    Many Azure governance controls be assigned at the management group scope, which means they apply across all subscriptions under that management group node. This enables a single configuration to apply consistently and reliably across many subscriptions.  Supported controls include Azure policy and Azure role-based access control. In addition, Azure Advisor, Security Center, and Activity Logs all support management group views.
 
 2. As well as implementing our governance rules on how Azure is used, we need a way to audit that no deployments have been made that bypass those rules. This audit needs to scale across the entire organization.
 
