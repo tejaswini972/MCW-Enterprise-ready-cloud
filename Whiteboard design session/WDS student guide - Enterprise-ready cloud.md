@@ -9,7 +9,7 @@ Whiteboard design session student guide
 </div>
 
 <div class="MCWHeader3">
-October 2019
+December 2019
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -40,15 +40,15 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 <!-- /TOC -->
 
-#  Enterprise-ready cloud whiteboard design session student guide
+# Enterprise-ready cloud whiteboard design session student guide
 
-## Abstract and learning objectives 
+## Abstract and learning objectives
 
 In this whiteboard design session, you will work in a group to design a comprehensive solution to address concerns about cost management, security, subscription and resource management, identity, deployment, and other areas to help apply an enterprise governance model for Trey Research.
 
 At the end of this whiteboard design session, you will be better able to design a governance plan to showcase the security, governance, and cost management features of Azure. In addition, you'll learn how to provide cost tracking and alerting by business unit and environment, implement a distributed administration model, and control the deployment of Azure services, all delivered at scale across a large enterprise.
 
-## Step 1: Review the customer case study 
+## Step 1: Review the customer case study
 
 **Outcome**
 
@@ -58,11 +58,11 @@ Timeframe: 15 minutes
 
 Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips.
 
-1.  Meet your table participants and trainer.
+1. Meet your table participants and trainer.
 
-2.  Read all of the directions for steps 1-3 in the student guide.
+2. Read all of the directions for steps 1-3 in the student guide.
 
-3.  As a table team, review the following customer case study.
+3. As a table team, review the following customer case study.
 
 ### Customer situation
 
@@ -92,10 +92,10 @@ Each business unit and subunit are allocated an Azure quota/budget and is respon
 
 In addition, each business unit has a requirement to break down their costs into the following categories. Accurate allocation of costs between these categories is essential, since this data feeds into gross margin and net profit figures collated by the central finance team and published quarterly to investors.
 
--   Development and Test
--   Production
--   Support Services
--   Infrastructure
+- Development and Test
+- Production
+- Support Services
+- Infrastructure
 
 Business units and the finance department need tools to accurately and reliably track all Azure costs, including a cost management dashboard and reports to understand current costs and projected future costs. Alerts when budgets are approached or exceeded are required.
 
@@ -133,31 +133,31 @@ However, they are also concerned about how to maintain consistency and control a
 
 The Cloud Governance team has developed best-practice reference implementations for commonly-deployed services, such as a DMZ network or a pair of web servers. They are looking for a way to automate these deployments. They recognize that these best practices will evolve over time, and so are also looking for a way to track existing deployments to ensure updates are rolled out consistently. In addition, where resources are deployed following Cloud Governance team best practices, individual business units should not be able to modify the configuration of those resources.
 
-### Customer needs 
+### Customer needs
 
 *Cost Management*
 
-1.  Provide cost management tools for budgets, alerts, dashboards, spending reports, forecasts, anomaly detection and investigation, and cost-saving recommendations.
+1. Provide cost management tools for budgets, alerts, dashboards, spending reports, forecasts, anomaly detection and investigation, and cost-saving recommendations.
 
-2.  Implement a charge back mechanism for the business units for resources they consume based on the IO code for each application.
- 
-3.  Enable allocation of costs between categories: Development and Test, Production, Support Services, and Infrastructure.
+2. Implement a charge back mechanism for the business units for resources they consume based on the IO code for each application.
+
+3. Enable allocation of costs between categories: Development and Test, Production, Support Services, and Infrastructure.
 
 *Security Baseline*
 
-1.  Enable investigation of changes leading up to any outage.
-   
-2.  Ensure Windows and Linux VMs meet password complexity requirements.
-   
-3.  Ensure VMs can only be created using an approved OS image.
+1. Enable investigation of changes leading up to any outage.
+
+2. Ensure Windows and Linux VMs meet password complexity requirements.
+
+3. Ensure VMs can only be created using an approved OS image.
 
 *Resource Consistency*
 
-1.  Allow the Cloud Governance team to control which Azure services can be used across the business units, while allowing controlled exceptions.
+1. Allow the Cloud Governance team to control which Azure services can be used across the business units, while allowing controlled exceptions.
 
-2.  Prevent accidental deletion of resources.
+2. Prevent accidental deletion of resources.
 
-3.  Implement a common resource naming standard across the organization.
+3. Implement a common resource naming standard across the organization.
 
 *Identity Baseline*
 
@@ -169,21 +169,21 @@ The Cloud Governance team has developed best-practice reference implementations 
 
 *Deployment Acceleration*
 
-1.  Implement deployment automation while allowing controlled divergence between environments (e.g. smaller footprint for Dev/Test environments)
+1. Implement deployment automation while allowing controlled divergence between environments (e.g. smaller footprint for Dev/Test environments)
 
-2.  Provide a means to track and update existing best-practice reference implementation deployments to meet updated best practices.
+2. Provide a means to track and update existing best-practice reference implementation deployments to meet updated best practices.
 
-3.  Provide a means to prevent best-practice reference implementation deployments being modified outside the control of the Cloud Governance team.
+3. Provide a means to prevent best-practice reference implementation deployments being modified outside the control of the Cloud Governance team.
     
-### Customer objections 
+### Customer objections
 
 1. Per-subscription configuration won't scale to an organization the size of Trey Research. How can governance controls be implemented with minimum per-subscription configuration overhead?
 
-2.  As well as implementing our governance rules on how Azure is used, we need a way to audit that no deployments have been made that bypass those rules. This audit needs to scale across the entire organization.
+2. As well as implementing our governance rules on how Azure is used, we need a way to audit that no deployments have been made that bypass those rules. This audit needs to scale across the entire organization.
 
-3.  How can we ensure our deployments meet Azure security best practices, and how can we protect our Production workloads even if the security perimeter is compromised?
+3. How can we ensure our deployments meet Azure security best practices, and how can we protect our Production workloads even if the security perimeter is compromised?
 
-4.  How can Azure help control the costs associated with non-Production VMs left running out-of-hours?
+4. How can Azure help control the costs associated with non-Production VMs left running out-of-hours?
 
 ### Infographic for common scenarios
 
@@ -207,9 +207,9 @@ Timeframe: 60 minutes
 
 Directions:  With all participants at your table, answer the following questions and list the answers on a flip chart:
 
-1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers?
+1. Who should you present this solution to? Who is your target customer audience? Who are the decision makers?
 
-2.  What customer business needs do you need to address with your solution?
+2. What customer business needs do you need to address with your solution?
 
 **Design**
 
@@ -217,30 +217,31 @@ Directions: With all participants at your table, respond to the following questi
 
 *Cost Management*
 
-1.  What tools are available to meet the cost management requirements of the individual business units, the finance team, and the Cloud Governance team? These requirements include setting budgets and alerts for each cost center, creating spending reports and forecasts, and identifying and investigating anomalies. What permissions and configuration are required to enable users to have access to these tools?
+1. What tools are available to meet the cost management requirements of the individual business units, the finance team, and the Cloud Governance team? These requirements include setting budgets and alerts for each cost center, creating spending reports and forecasts, and identifying and investigating anomalies. What permissions and configuration are required to enable users to have access to these tools?
   
-2.  Design a charge back mechanism for the business units for resources they consume based on the IO code for each application. Assuming your design is based on resource-level tags, how will you implement the following use cases?
+2. Design a charge back mechanism for the business units for resources they consume based on the IO code for each application. Assuming your design is based on resource-level tags, how will you implement the following use cases?
+
     - Every resource group must have an 'IOCode' tag
     - Every time a resource is created, it is assigned an 'IOCode' tag with a value matching its resource group
     - Any resource whose 'IOCode' tag is missing or does not match its corresponding resource group tag (for example, after moving the resource between resource groups) can be easily identified. Child resources, for which tags to not apply, are excluded.
   
-3.  Design a cost allocation mechanism to track Azure costs across the Development and Test, Production, Support Services, and Infrastructure categories.
+3. Design a cost allocation mechanism to track Azure costs across the Development and Test, Production, Support Services, and Infrastructure categories.
 
 *Security Baseline*
 
-1.  Following an outage, how can you identify and analyze any recent changes which may have contributed? Investigations will require details of which resource was changed, when it was changed, who made the change, and what was changed. How can you track changes to both resource properties (capturing both before and after state) as well as changes inside a virtual machine?
-   
-2.  How can you ensure that both Windows and Linux VMs meet password complexity requirements?
-   
-3.  How can you ensure that only approved OS images are used when creating new VMs? Your implementation should support a customizable list of built-in images as well as custom images.
+1. Following an outage, how can you identify and analyze any recent changes which may have contributed? Investigations will require details of which resource was changed, when it was changed, who made the change, and what was changed. How can you track changes to both resource properties (capturing both before and after state) as well as changes inside a virtual machine?
+
+2. How can you ensure that both Windows and Linux VMs meet password complexity requirements?
+
+3. How can you ensure that only approved OS images are used when creating new VMs? Your implementation should support a customizable list of built-in images as well as custom images.
 
 *Resource Consistency*
 
-1.  Identify a solution to restrict which services can be used in each Azure subscription, across the company. How will your solution allow exceptions for specific resource types for approved pilot projects or one-off deployments?
+1. Identify a solution to restrict which services can be used in each Azure subscription, across the company. How will your solution allow exceptions for specific resource types for approved pilot projects or one-off deployments?
 
-2.  How can you prevent accidental deletion of production resources, by administrators who require access to manage those resources?
+2. How can you prevent accidental deletion of production resources, by administrators who require access to manage those resources?
 
-3.  How can Enterprise IT enforce a company-wide resource naming convention?
+3. How can Enterprise IT enforce a company-wide resource naming convention?
 
 *Identity Baseline*
 
@@ -257,16 +258,16 @@ Directions: With all participants at your table, respond to the following questi
 2. How can the Cloud Governance team track where their best-practices reference implementations are deployed, and manage updates to those deployments?
 
 3. How can the Cloud Governance team prevent best-practice reference implementation deployments from being modified outside of their control?
- 
+
 **Prepare**
 
 Directions: With all participants at your table:
 
-1.  Identify any customer needs that are not addressed with the proposed solution.
+1. Identify any customer needs that are not addressed with the proposed solution.
 
-2.  Identify the benefits of your solution.
+2. Identify the benefits of your solution.
 
-3.  Determine how you will respond to the customer's objections.
+3. Determine how you will respond to the customer's objections.
 
 Prepare a 15-minute chalk-talk style presentation to the customer.
 
@@ -282,21 +283,21 @@ Timeframe: 30 minutes
 
 Directions:
 
-1.  Pair with another table.
+1. Pair with another table.
 
-2.  One table is the Microsoft team and the other table is the customer.
+2. One table is the Microsoft team and the other table is the customer.
 
-3.  The Microsoft team presents their proposed solution to the customer.
+3. The Microsoft team presents their proposed solution to the customer.
 
-4.  The customer makes one of the objections from the list of objections.
+4. The customer makes one of the objections from the list of objections.
 
-5.  The Microsoft team responds to the objection.
+5. The Microsoft team responds to the objection.
 
-6.  The customer team gives feedback to the Microsoft team.
+6. The customer team gives feedback to the Microsoft team.
 
-7.  Tables switch roles and repeat Steps 2-6.
+7. Tables switch roles and repeat Steps 2-6.
 
-## Wrap-up 
+## Wrap-up
 
 Timeframe: 15 minutes
 
@@ -304,22 +305,19 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 ## Additional references
 
-|    |            |
-|----------|:-------------:|
-|Azure Governance | https://docs.microsoft.com/azure/governance/ |
-|Azure Enterprise Scaffold | https://docs.microsoft.com/azure/architecture/cloud-adoption/appendix/azure-scaffold |
-|Microsoft Cloud Adoption Framework (CAF)  |  https://docs.microsoft.com/azure/architecture/cloud-adoption/overview  |
-|CAF Large Enterprise journey  |  https://docs.microsoft.com/azure/architecture/cloud-adoption/governance/journeys/large-enterprise/overview  |
-|Azure Policy |  https://docs.microsoft.com/azure/governance/policy/overview |
-|Role Based Access Control Configuration | https://docs.microsoft.com/azure/active-directory/role-based-access-control-configure |
-|Built in Roles for RBAC  | https://docs.microsoft.com/azure/active-directory/role-based-access-built-in-roles |
-|Custom Roles for RBAC| https://docs.microsoft.com/azure/role-based-access-control/custom-roles |
-|Management Groups   | https://docs.microsoft.com/azure/governance/management-groups |
-|Azure Cost Management |  https://docs.microsoft.com/azure/cost-management/overview-cost-mgt  |
-|Azure Cost Management by Cloudyn | https://docs.microsoft.com/azure/cost-management/overview |
-|EA Portal Roles  |   http://www.redbaronofazure.com/?cat=111 |
-|Azure Blueprints | https://docs.microsoft.com/en-us/azure/governance/blueprints/overview |
-|Azure Resource Graph | https://docs.microsoft.com/azure/governance/resource-graph/ |
-|Azure Security Center |  https://docs.microsoft.com/azure/security-center/security-center-intro |
-|Auto-shutdown of VMs   | https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.StartStopVMSolution?tab=Overview |
-
+|                                          |                                                                                                              |
+|------------------------------------------|:------------------------------------------------------------------------------------------------------------:|
+| Azure Governance                         | <https://docs.microsoft.com/azure/governance/>                                                               |
+| Microsoft Cloud Adoption Framework (CAF) | <https://docs.microsoft.com/azure/architecture/cloud-adoption/overview>                                      |
+| CAF Large Enterprise journey             | <https://docs.microsoft.com/azure/architecture/cloud-adoption/governance/journeys/large-enterprise/overview> |
+| Azure Policy                             | <https://docs.microsoft.com/azure/governance/policy/overview>                                                |
+| Role Based Access Control Configuration  | <https://docs.microsoft.com/azure/active-directory/role-based-access-control-configure>                      |
+| Built in Roles for RBAC                  | <https://docs.microsoft.com/azure/active-directory/role-based-access-built-in-roles>                         |
+| Custom Roles for RBAC                    | <https://docs.microsoft.com/azure/role-based-access-control/custom-roles>                                    |
+| Management Groups                        | <https://docs.microsoft.com/azure/governance/management-groups>                                              |
+| Azure Cost Management                    | <https://docs.microsoft.com/azure/cost-management/overview-cost-mgt>                                         |
+| EA Portal Roles                          | <http://www.redbaronofazure.com/?cat=111>                                                                    |
+| Azure Blueprints                         | <https://docs.microsoft.com/en-us/azure/governance/blueprints/overview>                                      |
+| Azure Resource Graph                     | <https://docs.microsoft.com/azure/governance/resource-graph/>                                                |
+| Azure Security Center                    | <https://docs.microsoft.com/azure/security-center/security-center-intro>                                     |
+| Auto-shutdown of VMs                     | <https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.StartStopVMSolution?tab=Overview>         |
