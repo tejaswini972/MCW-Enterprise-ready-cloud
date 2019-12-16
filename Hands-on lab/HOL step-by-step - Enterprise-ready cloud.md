@@ -122,7 +122,7 @@ In this task, you will create a new Management Group and move a subscription int
 
     ![Azure portal screenshot, showing the Add management group button that is used to launch the Add management group blade.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image91.png "Add management group button")
 
-3. In the **Add management group** blade fill in the management group ID and display name (we'll use 'ERC' as the management group ID and 'Enterprise Ready Cloud' as the display name). If you have existing management groups, create this as a child of Root and select **Save**.
+3. In the **Add management group** blade fill in the management group ID and display name (we'll use 'ERC' as the management group ID and 'Enterprise Ready Cloud' as the display name). If you have existing management groups, create this as a child of Root and select **Save**. Note that the Management group ID cannot be updated after creation but your display name can be updated later.
 
     ![Azure portal screenshot, showing New Management Group, then the group ID and name being filled in.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image5.png "Create Management Group blade")
 
@@ -634,7 +634,7 @@ In this exercise, you will configure delegated permissions for users in the Trey
 ### Help references
 
 |                                                              |                                                                                                             |
-|--------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------:|
+|--------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------|
 | Add new users to Active Directory                            | <https://docs.microsoft.com/azure/active-directory/add-users-azure-active-directory>                        |
 | How Subscriptions are associated with Azure AD               | <https://docs.microsoft.com/azure/active-directory/active-directory-how-subscriptions-associated-directory> |
 | Managing Azure AD Security Groups                            | <https://docs.microsoft.com/azure/active-directory/active-directory-groups-create-azure-portal>             |
@@ -698,7 +698,7 @@ In this task, you will update a script to automatically add a user to the contri
 
     ![Azure portal screenshot showing the Azure Cloud Shell first launch experience.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image94.png "Azure Cloud Shell PowerShell")
 
-2. Create a new script the Cloud Shell using **code** by typing the following:
+2. Create a new script in the Cloud Shell using **code** by typing the following:
 
     ```s
     code
