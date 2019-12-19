@@ -57,7 +57,7 @@ To validate that you have Global Administrator access to your Azure AD tenant, w
 
     ![Azure Active Directory Properties blade in the Azure portal.](images/Setup/image1.png "Properties blade")
 
-3. Under *Access management for Azure resources*, set the toggle to **Yes**.
+3. Under **Access management for Azure resources**, set the toggle to **Yes**.
 
     ![Azure Active Directory Properties blade in the Azure portal with the Access management for Azure resources set to Yes.](images/Setup/image2.png "Properties blade - Access management for Azure resources")
 
