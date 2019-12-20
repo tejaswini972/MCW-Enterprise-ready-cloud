@@ -98,7 +98,7 @@ In this exercise, you will first create a Management Group for your Azure subscr
 ### Help references
 
 |    |            |
-|----------|:-------------:|
+|----------|:-------------|
 | Governance in the Microsoft CAF for Azure | https://docs.microsoft.com/azure/architecture/cloud-adoption/governance/overview |
 | The Five Disciplines of Cloud Governance | https://docs.microsoft.com/azure/architecture/cloud-adoption/governance/governance-disciplines |
 | Azure Policy | <https://docs.microsoft.com/azure/azure-policy/azure-policy-introduction> |
@@ -923,7 +923,7 @@ In this exercise you will create an Azure Blueprint at the Management Group scop
 ### Help references
 
 |                                                                         |                                                                                              |
-|-------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------:|
+|-------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------|
 | Overview of the Azure Blueprints service                                | <https://docs.microsoft.com/azure/governance/blueprints/overview>                            |
 | Understand resource locking in Azure Blueprints                         | <https://docs.microsoft.com/azure/governance/blueprints/concepts/resource-locking>           |
 | Azure Resource Manager overview                                         | <https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview>            |
@@ -1485,7 +1485,7 @@ In this exercise you will create an Azure Virtual Machine to use as a resource t
 ### Help references
 
 |                                             |                                                                                                                                         |
-|---------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------:|
+|---------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------|
 | Create and manage Azure Budgets             | <https://docs.microsoft.com/en-us/azure/cost-management/tutorial-acm-create-budgets>                                                    |
 | Azure Resource Graph Explorer               | <https://docs.microsoft.com/en-us/azure/governance/resource-graph/first-query-portal#import-example-resource-graph-explorer-dashboards> |
 | Determine causes of Non-Complaint Resources | <https://docs.microsoft.com/en-us/azure/governance/policy/how-to/determine-non-compliance#change-history-preview>                       |
