@@ -99,8 +99,8 @@ In this exercise, you will first create a Management Group for your Azure subscr
 
 |    |            |
 |----------|:-------------|
-| Governance in the Microsoft CAF for Azure | https://docs.microsoft.com/azure/architecture/cloud-adoption/governance/overview |
-| The Five Disciplines of Cloud Governance | https://docs.microsoft.com/azure/architecture/cloud-adoption/governance/governance-disciplines |
+| Governance in the Microsoft CAF for Azure | <https://docs.microsoft.com/azure/architecture/cloud-adoption/governance/overview> |
+| The Five Disciplines of Cloud Governance | <https://docs.microsoft.com/azure/architecture/cloud-adoption/governance/governance-disciplines> |
 | Azure Policy | <https://docs.microsoft.com/azure/azure-policy/azure-policy-introduction> |
 | Azure Management Groups | <https://docs.microsoft.com/azure/azure-resource-manager/management-groups-overview> |
 
