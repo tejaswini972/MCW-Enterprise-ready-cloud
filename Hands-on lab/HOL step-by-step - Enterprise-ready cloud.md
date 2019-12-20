@@ -110,7 +110,7 @@ In this task, you will create a new Management Group and move a subscription int
 
 > **Note**: We'll use our own Management Group, if you have permissions you could also use the Tenant Root Management Group.
 
-1. Launch the Azure portal and navigate to **Management Groups** under **All services**:
+1. Launch the Azure portal and navigate to **Management Groups** under **All services**.
 
     ![Portal screenshot showing All Service \> Management Groups selection sequence](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image4.png "Create Management Group selection path")
 
@@ -546,9 +546,9 @@ Next, we shall create a policy initiative comprising multiple instances of our p
 
 9. Complete the Assign Initiative form as follows:
 
-    - Scope: **Enterprise Ready Cloud** (the Management Group created earlier)
+    - Scope: **Enterprise Ready Cloud** (The Management Group created earlier.)
     - Exclusions: **None**
-    - Initiative definition: **Naming Convention** (the initiative definition we just created)
+    - Initiative definition: **Naming Convention** (The initiative definition we just created.)
     - Assignment name: **Resource Naming Convention**
     - Description: **Enforces company-wide resource naming convention**
     - Policy enforcement: **Enabled**
@@ -1666,11 +1666,11 @@ In this task you will create a Budget to ensure accountability within the organi
 
 10. You will receive an email validating that you have been added to the Azure Monitor Budget Alert Action Group. Additionally, you can return to the **Budgets** option under the Cost Management menu to review the newly created budget alert.
 
-    ![Email screenshot, showing the set action group alert. ](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image187.png "Create Budget email confirmation")
+    ![Email screenshot, showing the set action group alert.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image187.png "Create Budget email confirmation")
 
 11. You will also receive an email later in the exercise regarding the Budget alert set earlier.
 
-    ![Email screenshot showing the budget alert. ](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image190.png "Budget email confirmation alert")
+    ![Email screenshot showing the budget alert.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image190.png "Budget email confirmation alert")
 
 ## Task 4: Environment Cleanup
 
