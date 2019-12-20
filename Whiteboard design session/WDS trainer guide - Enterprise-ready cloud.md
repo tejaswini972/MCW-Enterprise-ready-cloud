@@ -62,16 +62,25 @@ Thank you for taking time to support the whiteboard design sessions as a trainer
 
 An amazing trainer:
 
-- Creates a safe environment in which learning can take place.
-- Stimulates the participant's thinking.
-- Involves the participant in the learning process.
-- Manages the learning process (on time, on topic, and adjusting to benefit participants).
-- Ensures individual participant accountability.
-- Ties it all together for the participant.
-- Provides insight and experience to the learning process.
-- Effectively leads the whiteboard design session discussion.
-- Monitors quality and appropriateness of participant deliverables.
-- Effectively leads the feedback process.
+-   Creates a safe environment in which learning can take place.
+
+-   Stimulates the participant's thinking.
+
+-   Involves the participant in the learning process.
+
+-   Manages the learning process (on time, on topic, and adjusting to benefit participants).
+
+-   Ensures individual participant accountability.
+
+-   Ties it all together for the participant.
+
+-   Provides insight and experience to the learning process.
+
+-   Effectively leads the whiteboard design session discussion.
+
+-   Monitors quality and appropriateness of participant deliverables.
+
+-   Effectively leads the feedback process.
 
 ## Whiteboard design session flow
 
@@ -83,9 +92,11 @@ Each whiteboard design session uses the following flow:
 
 Analyze your customer's needs.
 
-- Customer's background, situation, needs and technical requirements
-- Current customer infrastructure and architecture
-- Potential issues, objectives and blockers
+-   Customer's background, situation, needs and technical requirements
+
+-   Current customer infrastructure and architecture
+
+-   Potential issues, objectives and blockers
 
 **Step 2: Design a proof of concept solution (60 minutes)**
 
@@ -93,10 +104,13 @@ Analyze your customer's needs.
 
 Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format.
 
-- Determine your target customer audience.
-- Determine customer's business needs to address your solution.
-- Design and diagram your solution.
-- Prepare to present your solution.
+-   Determine your target customer audience.
+
+-   Determine customer's business needs to address your solution.
+
+-   Design and diagram your solution.
+
+-   Prepare to present your solution.
 
 **Step 3: Present the solution (30 minutes)**
 
@@ -104,23 +118,29 @@ Design a solution and prepare to present the solution to the target customer aud
 
 Present solution to your customer:
 
-- Present solution
-- Respond to customer objections
-- Receive feedback
+-   Present solution
+
+-   Respond to customer objections
+
+-   Receive feedback
 
 **Wrap-up (15 minutes)**
 
-- Review preferred solution
+-   Review preferred solution
 
 ## Before the whiteboard design session: How to prepare
 
 Before conducting your first whiteboard design session:
 
-- Read the Student guide (including the case study) and Trainer guide.
-- Become familiar with all key points and activities.
-- Plan the point you want to stress, which questions you want to drive, transitions, and be ready to answer questions.
-- Prior to the whiteboard design session, discuss the case study to pick up more ideas.
-- Make notes for later.
+-   Read the Student guide (including the case study) and Trainer guide.
+
+-   Become familiar with all key points and activities.
+
+-   Plan the point you want to stress, which questions you want to drive, transitions, and be ready to answer questions.
+
+-   Prior to the whiteboard design session, discuss the case study to pick up more ideas.
+
+-   Make notes for later.
 
 ## During the whiteboard design session: Tips for an effective whiteboard design session
 
@@ -130,9 +150,11 @@ Before conducting your first whiteboard design session:
 
 When participants are doing activities, you can **look ahead to refresh your memory**.
 
-- **Adjust activity and whiteboard design session pace** as needed to allow time for presenting, feedback, and sharing.
-- **Add examples, points, and stories** from your own experience. Think about stories you can share that help you make your points clearly and effectively.
-- **Consider creating a "parking lot"** to record issues or questions raised that are outside the scope of the whiteboard design session or can be answered later. Decide how you will address these issues, so you can acknowledge them without being derailed by them.
+-   **Adjust activity and whiteboard design session pace** as needed to allow time for presenting, feedback, and sharing.
+
+-   **Add examples, points, and stories** from your own experience. Think about stories you can share that help you make your points clearly and effectively.
+
+-   **Consider creating a "parking lot"** to record issues or questions raised that are outside the scope of the whiteboard design session or can be answered later. Decide how you will address these issues, so you can acknowledge them without being derailed by them.
 
 ***Have fun**! Encourage participants to have fun and share!*
 
@@ -140,7 +162,7 @@ When participants are doing activities, you can **look ahead to refresh your mem
 
 **Ask questions** and get them to share to fully involve your group in the learning process.
 
-**Ask first**, whenever possible. Before launching into a topic, learn your audience's opinions about it and experiences with it. Asking first enables you to assess their level of knowledge and experience and leaves them more open to what you are presenting.
+**Ask first**, whenever possible. Before launching into a topic, learn your audience's opinions about it and experiences with it. Asking first enables you to assess their level of knowledge and experience, and leaves them more open to what you are presenting.
 
 **Wait for responses**. If you ask a question such as, "What's your experience with (fill in the blank)?" then wait. Do not be afraid of a little silence. If you leap into the silence, your participants will feel you are not serious about involving them and will become passive. Give participants a chance to think, and if no one answers, patiently ask again. You will usually get a response.
 
@@ -430,27 +452,39 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 ## Step 1: Review the customer case study
 
-- Check in with your table participants to introduce yourself as the trainer.
-- Ask, "What questions do you have about the customer case study?"
-- Briefly review the steps and time frames of the whiteboard design session.
-- Ready, set, go! Let the table participants begin.
+-   Check in with your table participants to introduce yourself as the trainer.
+
+-   Ask, "What questions do you have about the customer case study?"
+
+-   Briefly review the steps and timeframes of the whiteboard design session.
+
+-   Ready, set, go! Let the table participants begin.
 
 ## Step 2: Design a proof of concept solution
 
-- Check in with your tables to ensure that they are transitioning from step to step on time.
-- Provide some feedback on their responses to the business needs and design.
-  - Try asking questions first that will lead the participants to discover the answers on their own.
-- Provide feedback for their responses to the customer's objections.
-  - Try asking questions first that will lead the participants to discover the answers on their own.
+-   Check in with your tables to ensure that they are transitioning from step to step on time.
+
+-   Provide some feedback on their responses to the business needs and design.
+
+    -   Try asking questions first that will lead the participants to discover the answers on their own.
+
+-   Provide feedback for their responses to the customer's objections.
+
+    -   Try asking questions first that will lead the participants to discover the answers on their own.
 
 ## Step 3: Present the solution
 
-- Determine which table will be paired with your table before Step 3 begins.
-- For the first round, assign one table as the presenting team and the other table as the customer.
-- Have the presenting team present their solution to the customer team.
-  - Have the customer team provide one objection for the presenting team to respond to.
-  - The presentation, objections, and feedback should take no longer than 15 minutes.
-  - If needed, the trainer may also provide feedback.
+-   Determine which table will be paired with your table before Step 3 begins.
+
+-   For the first round, assign one table as the presenting team and the other table as the customer.
+
+-   Have the presenting team present their solution to the customer team.
+
+    -   Have the customer team provide one objection for the presenting team to respond to.
+
+    -   The presentation, objections, and feedback should take no longer than 15 minutes.
+
+    -   If needed, the trainer may also provide feedback.
 
 ## Wrap-up
 
