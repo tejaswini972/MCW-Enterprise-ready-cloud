@@ -9,7 +9,7 @@ Before the hands-on lab setup guide
 </div>
 
 <div class="MCWHeader3">
-October 2019
+December 2019
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -33,7 +33,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 <!-- /TOC -->
 
-# Enterprise-ready cloud before the hands-on lab setup guide 
+# Enterprise-ready cloud before the hands-on lab setup guide
 
 ## Requirements
 
@@ -49,7 +49,7 @@ To complete this lab, you must have full global admin access to the Azure AD ten
 
 ### Task 1: Validate global admin access to Azure AD tenant
 
-To validate that you have Global Administrator access to your Azure AD tenant, we will elevate access for a Global Administrator to allow for the management of Azure resources. 
+To validate that you have Global Administrator access to your Azure AD tenant, we will elevate access for a Global Administrator to allow for the management of Azure resources.
 
 1. Sign in to the [Azure portal](https://portal.azure.com/) or the [Azure Active Directory admin center](https://aad.portal.azure.com/) as a Global Administrator.
 
@@ -57,7 +57,7 @@ To validate that you have Global Administrator access to your Azure AD tenant, w
 
     ![Azure Active Directory Properties blade in the Azure portal.](images/Setup/image1.png "Properties blade")
 
-3. Under *Access management for Azure resources*, set the toggle to **Yes**.
+3. Under **Access management for Azure resources**, set the toggle to **Yes**.
 
     ![Azure Active Directory Properties blade in the Azure portal with the Access management for Azure resources set to Yes.](images/Setup/image2.png "Properties blade - Access management for Azure resources")
 
@@ -69,7 +69,7 @@ To validate that you have Global Administrator access to your Azure AD tenant, w
 
     > **Note**: This setting is not a global property and applies only to the currently signed in user. You can't elevate access for all members of the Global Administrator role.
 
-5.  Login to <http://portal.azure.com>, select **All Services**, and type in **Azure Active Directory**.
+5. Login to <http://portal.azure.com>, select **All Services**, and type in **Azure Active Directory**.
 
 6. Sign out and sign back in to refresh your access.
 

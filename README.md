@@ -6,17 +6,17 @@ Even as large as it is, Trey seeks to maximize the cost-effectiveness and flexib
 
 Trey is interested in a large-scale solution that will help mitigate creeping costs and start the transition to a modern cloud-based enterprise architecture using a solid set of controls for governance.
 
-October 2019
-
+December 2019
 
 ## Target audience
+
 - Infrastructure Architect
 
 ## Abstracts
 
 ### Workshop
 
-In this workshop you will create an Azure Cloud Governance plan to advise a manufacturing company of the features available in Azure. You will discover features to bring governance to their Azure deployments, distributed administration, and allowance for secure remote connectivity and development work for their offshore developers. 
+In this workshop you will create an Azure Cloud Governance plan to advise a manufacturing company of the features available in Azure. You will discover features to bring governance to their Azure deployments, distributed administration, and allowance for secure remote connectivity and development work for their offshore developers.
 
 At the end of the workshop, you will be better able to design a governance plan to showcase the security and governance features of Azure and control costs. In addition, you'll learn how to provide for cost tracking by business unit, environment, and project, provide for a distributed administration model, put a service catalog in place to prevent deployment of unsupported Azure services, and put controls in place to allow deployment of services only in specific regions. You will also learn how to deploy and manage your Azure subscriptions from a tenant level through Management groups and Azure Blueprints.
 
@@ -33,6 +33,7 @@ In this hands-on lab, you are working with Trey Research to setup some best prac
 At the end of this hands-on lab, you will know how to provide cost tracking by business unit, environment and project with resource tags, provide for a distributed administration model, put a service catalog in place to prevent deployment of unsupported Azure services, and put controls in place to allow deployment of services only in specific regions.
 
 ## Azure services and related products
+
 - Azure VMs
 - Azure Portal
 - Azure PowerShell
@@ -45,9 +46,11 @@ At the end of this hands-on lab, you will know how to provide cost tracking by b
 - Azure Blueprints
 
 ## Azure solutions
-DC Migration
+
+- DC Migration
 
 ## Related references
+
 - [MCW](https://microsoftcloudworkshop.com)
 
 ## Help & Support
@@ -55,6 +58,7 @@ DC Migration
 We welcome feedback and comments from Microsoft SMEs & learning partners who deliver MCWs.  
 
 ***Having trouble?***
+
 - First, verify you have followed all written lab instructions (including the Before the Hands-on lab document).
 - Next, submit an issue with a detailed description of the problem.
 - Do not submit pull requests. Our content authors will make all changes and submit pull requests for approval.  
