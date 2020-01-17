@@ -1452,7 +1452,7 @@ In this task you will explore the compliance features of Azure Policy by working
 
     Do the tags match?
 
-    > **Note**: In this case the tags to not match. The Azure Policy which appends tags from the resource group to child resources only effects create and update operations and not move operations.
+    > **Note**: In this case the tags do not match. The Azure Policy which appends tags from the resource group to child resources only effects create and update operations and not move operations.
 
 5. In addition to Azure PowerShell and the Azure CLI, Azure Policy can be used to view the compliance of your resources through both the Azure portal and the command line.
 
