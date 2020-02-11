@@ -1173,7 +1173,7 @@ In this task, you will update an existing policy that blocks the deployment of B
     ```json
     {
         "source": "action",
-        "like": "Microsoft.BluePrint/blueprintAssignments/*"
+        "like": "Microsoft.Blueprint/blueprintAssignments/*"
     }
     ```
 
