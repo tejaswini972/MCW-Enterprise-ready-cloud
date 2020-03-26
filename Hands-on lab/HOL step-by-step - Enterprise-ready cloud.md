@@ -122,13 +122,13 @@ In this task, you will create a new Management Group and move a subscription int
 
     ![Azure portal screenshot, showing the Add management group button that is used to launch the Add management group blade.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image91.png "Add management group button")
 
-3. In the **Add management group** blade fill in the management group ID and display name (we'll use 'ERC' as the management group ID and 'Enterprise Ready Cloud' as the display name). If you have existing management groups, create this as a child of Root and select **Save**. Note that the Management group ID cannot be updated after creation but your display name can be updated later.
+3. In the **Add management group** blade enter **ERC** for the Management group ID and **Enterprise Ready Cloud** for the Management group display name. Select **Save**. If you have existing management groups, create this as a child of Root and select **Save**. Note that the Management group ID cannot be updated after creation but your display name can be updated later.
 
     ![Azure portal screenshot, showing New Management Group, then the group ID and name being filled in.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image5.png "Create Management Group blade")
 
     > **Note**: If this is the first management group being created, note that it may take up to 15 minutes for it to complete.
 
-    ![Azure portal screenshot showing the toast notification that notifies the user it may take up to 15 minutes to create the management group.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image90.png "Create management group toast notification")
+    ![Azure portal screenshot showing the notification that it may take up to 15 minutes to create the management group.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image90.png "Create management group notification")
 
 4. Select the newly created management group, then select **details**.
 
@@ -142,13 +142,13 @@ In this task, you will create a new Management Group and move a subscription int
 
 In this exercise, you will apply one of the built-in Azure Policies to restrict services to the supported list provided by Trey Research.
 
-1. First, we need to build a list of resource types, which will be permitted, and their corresponding resource providers. One way to do this is to use PowerShell. Launch the Azure Cloud Shell and select PowerShell. If prompted to create storage, select the **Create storage** button. Accept the prompt for storage.
+1. First, we need to build a list of resource types, which will be permitted, and their corresponding resource providers. One way to do this is to use PowerShell. Launch the **Azure Cloud Shell** and select PowerShell. If prompted to create storage, select the **Create storage** button. Accept the prompt for storage.
 
     ![Azure portal screenshot showing the button to launch the Azure Cloud Shell.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image93.png "Azure Cloud Shell launch button")
 
     ![Azure portal screenshot showing the Azure Cloud Shell first launch experience.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image94.png "Azure Cloud Shell PowerShell")
 
-2. Enter the following script into the window and run the script:
+2. Run the following script in the shell. 
 
     ```powershell
     $FormatEnumerationLimit = -1
@@ -200,7 +200,7 @@ In this exercise, you will apply one of the built-in Azure Policies to restrict 
     Register-AzResourceProvider -ProviderNamespace Microsoft.Compute
     ```
 
-4. Launch the Azure Management portal, and navigate to **Policy** under **All services**:
+4. In the Azure portal, navigate to **Policy** under **All services**:
 
     ![Azure portal screenshot, showing selection sequence All Services, then Policy.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image7.png "Azure Policy selection path ")
 
@@ -213,9 +213,13 @@ In this exercise, you will apply one of the built-in Azure Policies to restrict 
 6. In the Policy definition blade, use the following configurations:
 
     - Definition location: **Enterprise Ready Cloud** (ERC) management group, as created in Task 1.
+  
     - Name: **Service catalog**
+  
     - Description: **Restrict resource types to those permitted by Enterprise IT**.
+  
     - Category: **Create new** > **Service catalog**
+  
     - Policy rule: ***Replace the default JSON with the following code:***
 
     ```json
@@ -361,11 +365,17 @@ In this exercise, you will apply one of the built-in Azure Policies to restrict 
 9. On the ***Service catalog \- Assign policy blade***, specify the following configurations and then select **Assign** to assign your policy definition to your Enterprise Ready Cloud management group:
 
     - Scope: **Enterprise Ready Cloud**
+  
     - Exclusions: **None**
+  
     - Policy definition: **Service catalog**
+  
     - Assignment name: **Service catalog policy**
+  
     - Description: **Restrict resource types to those permitted by Enterprise IT**.
+  
     - Policy enforcement: **Enabled**
+  
     - Assigned by: **Enterprise IT**
 
     The assignment form should look like this:
@@ -378,7 +388,7 @@ In this exercise, you will apply one of the built-in Azure Policies to restrict 
 
 In this exercise, you will apply another built-in Azure policy to restrict the creation of ExpressRoute circuits. For this policy, we'll use an exclusion scope for the resource group in which Enterprise IT will create the permitted ExpressRoute circuits.
 
-1. First, we'll create the resource group for the exclusion scope. Select **Resource groups**, then **Add**, and then fill in the resource group name **ExpressRouteRG**, select your subscription, and choose a resource group location:
+1. First, we'll create the resource group for the exclusion scope. Select **Resource groups**, then **Add**, and then enter the resource group name **ExpressRouteRG**, select your subscription, and choose a resource group location:
 
     ![Azure portal screenshot, showing adding a resource group called \'ExpressRoute-group\'](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image104.png "Create resource group selection path")
 
@@ -387,13 +397,18 @@ In this exercise, you will apply another built-in Azure policy to restrict the c
 3. Return to the **Policy** blade in the Azure portal. Select **Assignments**, then **Assign Policy**. Complete the form as follows:
 
     - Scope: **Enterprise Ready Cloud** (The management group created earlier.)
-    - Exclusions: **The resource group created in Step 1 above. Select the management group, subscription, and resource group**
+  
+    - Exclusions: **The resource group created in Step 1 above, ExpressRouteRG. Select the management group, subscription, and resource group**
+  
     - Policy definition: **Not allowed resource types**
+  
     - Assignment name: **Block ExpressRoute circuits**
+  
     - Description: **Block creating of ExpressRoute circuits, except in the Enterprise IT dedicated ExpressRoute resource group**
+  
     - Policy enforcement: **Enabled**
+  
     - Assigned by: **Enterprise IT**
-    - Parameters \| Not allowed resource types: **Microsoft.Network/expressRouteCircuits**
 
     The assignment form should look like this:
 
@@ -403,7 +418,7 @@ In this exercise, you will apply another built-in Azure policy to restrict the c
 
 5. From the drop-down list select the option **expressRouteCircuits**.
 
-6. Your Assign policy screen should look like the below screen shot. Once confirmed select the **Create** button.
+6. Select **Review + create**. Your Assign policy screen should look like the below screen shot. Once confirmed select **Create**.
 
     ![Azure portal screenshot, showing the Assign Policy blade. The policy is \'Not allowed resource types\' and the ExpressRouteCircuits resource type has been selected. The policy is assigned at the Management group scope, with the ExpressRouteGroup resource group as an exclusion path.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image164.png "Assign Policy blade")
 
@@ -414,11 +429,17 @@ In this exercise, you will create a new Azure Policy assignment that restricts t
 1. In the Azure portal, navigate to **Policy**, then select **Assignments**, then **Assign Policy**. Complete the form as follows:
 
     - Scope: **Enterprise Ready Cloud**
+  
     - Exclusions: **None**
+  
     - Policy definition: **Allowed locations**
+  
     - Assignment name: **Restrict Azure locations**
-    - Description: **Restrict Azure resources to the list of Azure regions permitted by Enterprise IT**.
+  
+    - Description: **Restrict Azure resources to the list of Azure regions permitted by Enterprise IT**
+  
     - Policy enforcement: **Enabled**
+  
     - Assigned by: **Enterprise IT**
 
     The assignment form should look like this:
@@ -435,7 +456,7 @@ In this exercise, you will create a new Azure Policy assignment that restricts t
 
     ![Azure portal screenshot, showing the Assign Policy blade. The \'Allowed locations\' policy has been selected, with 6 locations selected.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image166.png "Assign Policy blade")
 
-5. Select the **Create** button to complete the assign policy wizard.
+5. Select **Create** to complete the assign policy wizard.
 
 ### Task 5: Create and apply a naming convention
 
@@ -452,10 +473,14 @@ First, we will create a generic policy definition that restricts resources of a 
 2. Complete the Policy definition form as follows:
 
     - Definition location: **Enterprise Ready Cloud** (The Management Group created earlier)
+  
     - Name: **Restrict Resource Name Suffix**
+  
     - Description: **Restrict resources of a given type to have a name ending with a given suffix. The resource type and suffix are parameterized.**
+  
     - Category:  **Create new** > **Naming**
-    - Policy rule and parameters: **As shown below:**
+  
+    - Policy rule: **Replace with the below JSON**
 
     ```json
     {
@@ -512,8 +537,11 @@ Next, we shall create a policy initiative comprising multiple instances of our p
 2. Fill in the **Initiative definition** blade as follows (but **do not** select **Save** yet).
 
     - Definition location: **Enterprise Ready Cloud** (the Management Group created earlier)
+  
     - Name: **Naming Convention**
+  
     - Description: **Trey Research resource naming convention**
+  
     - Category: **Use Existing** > **Naming**
 
     ![Azure portal screenshot showing the \'Basics\' section of the New Policy Initiative Definition blade. The Name has been filled in as \'Naming Convention\'.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image167.png "New Policy Definition - Basics")
@@ -530,10 +558,10 @@ Next, we shall create a policy initiative comprising multiple instances of our p
 
     ![Azure portal screenshot, showing filling in the parameters for the \'Restrict Resource Name Suffix\' policy definition, as part of the policy initiative definition](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image16.png "Policies and Parameters screenshot")
 
-6. Repeat steps 6 and 7 above for the following resource type:
+6. Repeat steps 3-5 above except enter the following values.
 
-    - Virtual Networks
         - Resource Type: **Microsoft.Network/virtualNetworks**
+
         - Resource Name Suffix: **vnet**
 
     ![Azure portal screenshot, showing filling in the parameters for the \'Restrict Resource Name Suffix\' policy definition, as part of the policy initiative definition](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image168.png "Policies and Parameters screenshot")
@@ -544,14 +572,20 @@ Next, we shall create a policy initiative comprising multiple instances of our p
 
     ![Azure portal screenshot, showing the selection sequence Policy then Assignments then Assign Initiative.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image108.png "Assign Initiative selection path")
 
-9. Complete the Assign Initiative form as follows:
+9.  Complete the Assign Initiative form as follows:
 
     - Scope: **Enterprise Ready Cloud** (The Management Group created earlier.)
+  
     - Exclusions: **None**
+
     - Initiative definition: **Naming Convention** (The initiative definition we just created.)
+  
     - Assignment name: **Resource Naming Convention**
+  
     - Description: **Enforces company-wide resource naming convention**
+  
     - Policy enforcement: **Enabled**
+  
     - Assigned by: **Enterprise IT**
 
     The assignment form should look like this:
@@ -566,64 +600,72 @@ In this task, you will use the Azure management portal to validate each of the p
 
 #### Subtask 1: Test the service catalog policy <!-- omit in toc -->
 
-1. Select **Create a Resource \> Internet of Things \> IoT Hub**.
+1. In the portal's left navigation select **Create a Resource \> Internet of Things \> IoT Hub**.
 
     ![Azure portal screenshot, showing selection sequence to create an IoT Hub resource](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image19.png "Create IoT hub Azure portal selection path")
 
-2. Specify a unique name for the IoT Hub and choose an existing resource group. Choose a permitted location (we are only testing the Service Catalog policy at this time).
+2. Specify a unique name for the IoT Hub and choose the existing **ExpressRouteRG** resource group. Choose a permitted location (we are only testing the Service Catalog policy at this time).
 
     Once all the settings have been filled in, select **Review + create** followed by **Create**.
 
     ![Azure portal screenshot showing the review and create experience for an IoT Hub.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image95.png "Azure IoT Hub Create")
 
-3. The IoT Hub creation blade should show an error:
+3. The IoT Hub creation blade should show an error. If you click the error message you will see in the activity log that there were policy errors. 
 
-    ![Azure portal screenshot, showing error message \"There were policy errors. click here to view details\"](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image21.png "Policy Error screenshot")
+    ![Azure portal screenshot, showing error message](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image21.png "Error screenshot")
 
 #### Subtask 2: Test the ExpressRoute circuit policy <!-- omit in toc -->
 
-1. Select **Create a resource** **\>** **Networking** **\>** **ExpressRoute**.
+1. In the portal's left navigation, select **Create a resource** **\>** **Networking** **\>** **ExpressRoute**.
 
     ![Azure portal screenshot, showing the selection sequence to create an ExpressRoute circuit](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image23.png "Create ExpressRoute selection path")
 
 2. Specify the following configuration for the circuit and select **Create**.
 
     - Create new or import from classic: **Create new**
+  
     - Circuit name: **TestCircuit**
+  
     - Provider: **AT&T**
+  
     - Peering location: **Silicon Valley**
+  
     - Bandwidth: **50Mbps**
+  
     - SKU: **Standard**
+  
     - Billing model: **Unlimited**
+  
     - Subscription: **Select your Azure subscription**
-    - Resource group: **Any resource group *except* ExpressRouteRG OR Create new**.
-    - Location: **Any available location in the allowed locations policy**.
+  
+    - Resource group: (Create new) **PolicyTestRG**.
+   
+    - Location: **Any available location in the allowed locations policy including East US, West US, North Europe, West Europe, Japan East, Japan West**.
 
     ![The Circuit configuration fields are set to the following settings: Circuit name, TestCircuit; Provider, AT&T; Peering location, Silicon Valley; Bandwidth, 50Mbps; SKU, Standard; Billing model, Unlimited; Subscription, Microsoft Azure; Resource Group, PolicyTestRG, Location, West US.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image24.png "Circuit configuration fields")
 
 3. As with the Service Catalog policy, you should see an error in the Create ExpressRoute Circuit blade, which when selected shows the error details:
 
-    ![Azure portal screenshot, showing error message \"There were policy errors. click here to view details\".](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image96.png "Validation Error screenshot")
+    ![Azure portal screenshot, showing error message \"The template deployment failed because of policy violation\".](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image96.png "Validation Error screenshot")
 
-    ![Azure portal screenshot, showing Errors blade. The error message states the template deployment failed due to a policy violation.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image97.png "Policy Violation error message")
 
     > **Note**: If you created a new resource group in the previous step, you will see that the resource group has been created even though the deployment of the resource failed. This is because the policy that was created to restrict the creation of ExpressRoute circuits specifically targets that Azure resource type and a resource group is another distinct resource type.
 
 #### Subtask 3: Test the resource location policy <!-- omit in toc -->
 
-1. Testing the resource location policy follows a similar pattern. Attempt to create a permitted resource, with a permitted name, but in a not-permitted region. For example, attempt to create a virtual network named 'erc-vnet' in South Central US. This should be rejected by the 'Restrict Azure locations' policy.
+1. Testing the resource location policy follows a similar pattern. You woukd attempt to create a permitted resource, with a permitted name, but in a non-permitted region. For example, you can attempt to create a virtual network within the **PolicyTestRG** resource group named **erc-vnet** in **South Central US**. This should be rejected by the **Restrict Azure locations** policy.
 
     ![Azure portal screenshot, showing Errors blade. The error message states the template deployment failed due to a policy violation.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image110.png "Policy Violation error message")
 
-2. To test further, change to a permitted location (e.g. East US) and try again. This time, the virtual network should be created without issue.
+2. To test further, change the region to a permitted location (e.g. **East US**) and try again. This time, the virtual network should be created without issue.
 
     > **Note**: Recall that an initiative assignment was made earlier to deny the creation of resources that do not meet the organizational naming conventions. If you had attempted to create a virtual networking without `-vnet` in its name, the creation of the resource would have been denied by the initiative assignment and its associated configuration.
 
 #### Subtask 4: Test the naming convention policy <!-- omit in toc -->
 
-1. Attempt to create a permitted resource, in a permitted location, with a not-permitted name. For example, create a virtual network named 'erc-network' in East US. This should be rejected by the 'Resource Naming Convention' policy.
+1. Attempt to create a permitted resource, in a permitted location, with a non-permitted name. For example, create a virtual network within the **PolicyTestRG** resource group named **erc-network** in the **East US** region. This should be rejected by the **Resource Naming Convention** policy.
 
-2. To test further, change to a permitted name (e.g. 'erc-network-vnet') and try again---this time, the virtual network should be created without issue.
+2. To test further, change to a permitted name (e.g. **erc-network-vnet**) and try again---this time, the virtual network should be created without issue.
 
 ## Exercise 2: Configure delegated permissions
 
@@ -646,7 +688,7 @@ In this exercise, you will configure delegated permissions for users in the Trey
 
 In this task, you will create two groups in Azure AD that you will use for testing delegated access control. In the next task, users will be created that will be added to these new security groups.
 
-1. Launch the Azure Cloud Shell and select PowerShell. If prompted to create storage, select the **Create storage** button.
+1. Launch the Azure Cloud Shell and select **PowerShell** if prompted. If prompted to create storage, select the **Create storage** button.
 
     ![Azure portal screenshot showing the button to launch the Azure Cloud Shell.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image93.png "Azure Cloud Shell launch button")
 
@@ -665,14 +707,16 @@ In this task, you will create two groups in Azure AD that you will use for testi
 
 In this task, you will create two user accounts in Azure AD that you will use for testing delegated access control.
 
-1. Execute the following script to find out the name of your Azure AD tenant (this will be needed in the next step) and store it in a variable.
+1. Execute the following script to find out the name of your Azure AD tenant (this will be needed in the next step) and store it in a variable. Be sure to make note of it in Notepad as well. It will be needed in the next task.
 
     ```s
     $aadDomain = (az ad signed-in-user show --query userPrincipalName -o tsv).Split("@")[1]
     echo $aadDomain
     ```
 
-1. Create the first user, **Electronics Admin** and add the user to the **BU-Electronics-Admins** security group.
+    ![Azure portal screenshot showing the tenant name in the cloud shell](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/TenantName.png "Azure tenant name")
+
+2. Create the first user, **Electronics Admin** and add the user to the **BU-Electronics-Admins** security group.
 
     ```s
     az ad user create --display-name "Electronics Admin" --password "demo@pass123" --user-principal-name "ElectronicsAdmin@$aadDomain"
@@ -680,7 +724,7 @@ In this task, you will create two user accounts in Azure AD that you will use fo
     az ad group member add --group "BU-Electronics-Admins" --member-id $memberId
     ```
 
-1. Next, create the user **Electronics User** and add the user to the **BU-Electronics-Users** security group.
+3. Next, create the user **Electronics User** and add the user to the **BU-Electronics-Users** security group.
 
     ```s
     az ad user create --display-name "Electronics User" --password "demo@pass123" --user-principal-name "ElectronicsUser@$aadDomain"
@@ -692,19 +736,13 @@ In this task, you will create two user accounts in Azure AD that you will use fo
 
 In this task, you will update a script to automatically add a user to the contributor role of the subscription.
 
-1. Launch the Azure Cloud Shell and select PowerShell. If prompted to create storage, select the **Create storage** button.
-
-    ![Azure portal screenshot showing the button to launch the Azure Cloud Shell.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image93.png "Azure Cloud Shell launch button")
-
-    ![Azure portal screenshot showing the Azure Cloud Shell first launch experience.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image94.png "Azure Cloud Shell PowerShell")
-
-2. Create a new script in the Cloud Shell using **code** by typing the following:
+1. Create a new script in the Cloud Shell using **code** by running the following:
 
     ```s
     code
     ```
 
-3. Add the following code to script and save the file. This code will retrieve the object ID for the Active Directory group passed in and assign the group to the Contributor role on the subscription.
+2. Add the following code to script. This code will retrieve the object ID for the Active Directory group passed in and assign the group to the Contributor role on the subscription.
 
     ```powershell
     param([string]$SubscriptionId, [string]$AdGroupName)
@@ -724,13 +762,13 @@ In this task, you will update a script to automatically add a user to the contri
 
     This code will add an Azure AD security group to the contributor role at the subscription scope.
 
-4. Save the file as **ConfigureSubscription.ps1** by selecting **Save** in the menu behind the ellipsis (...).
+3. Save the file as **ConfigureSubscription.ps1** by selecting **Save** in under the ellipsis (...).
 
     ![Azure portal screenshot showing the Azure Cloud Shell and the Save function in code.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image111.png "Azure Cloud Shell code Save file command")
 
-5. Close **code** using the **Close Editor** command by selecting **Close Editor** in the menu behind the ellipsis (...).
+4. Close **code** by selecting **Close Editor** under the ellipsis (...).
 
-6. Create a local variable in the **Console** containing your Subscription ID (you can copy your subscription ID from the Azure portal, or obtain it using `Get-AzSubscription`). In this example, we will obtain is using the referenced cmdlet.
+5. Create a local variable in the **Console** containing your Subscription ID (you can copy your subscription ID from the Azure portal, or obtain it using `Get-AzSubscription`). In this example, we will obtain is using the referenced cmdlet.
 
     ```powershell
     $SubscriptionId = (Get-AzSubscription).SubscriptionId
@@ -738,27 +776,31 @@ In this task, you will update a script to automatically add a user to the contri
 
     > **Note**: If your account has access to multiple Azure subscriptions you may need to alter the command to target the proper subscription using the `-SubscriptionId` or `-SubscriptionName` parameter with the `Get-AzSubscription` cmdlet.
 
-7. Execute the script passing in the `-SubscriptionID` and `-AdGroupName` parameters:
+6. Execute the script passing in the `-SubscriptionID` and `-AdGroupName` parameters:
 
     ```powershell
     . $HOME\ConfigureSubscription.ps1 -SubscriptionId $SubscriptionId -AdGroupName "BU-Electronics-Admins"
     ```
 
-8. In a different type of browser, or in an InPrivate or Incognito mode window in your current browser navigate to the Azure management portal in a browser at <http://portal.azure.com>, and sign in using the **ElectronicsAdmin** credentials created earlier.
+7. In a different type of browser, or in an InPrivate or Incognito mode window in your current browser navigate to the Azure management portal in a browser at <http://portal.azure.com>, and sign in using the **ElectronicsAdmin** credentials created earlier and shown below. Be sure to include your tenant name in the username. 
 
-    > **Note**: You may be prompted to configure a method of resetting your account. If you are, you can choose either a phone call or email.
+    - Username: **electronicsadmin@[the tenant name you noted earlier]**
 
-9. Select **All services**, search for **Subscriptions**, and then select **Subscriptions**.
+    - Password: **demo@pass123**
+
+    > **Note**: You may be prompted to configure a method of resetting your account. You may be able to skip this but if not, you can choose either a phone call or email.
+
+8. Select **All services** then search for and select **Subscriptions**.
 
     ![Azure portal screenshot, showing subscriptions button.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image112.png "Subscriptions button")
 
-10. Select the name of the subscription you have been working on.
+9.  Select the name of the subscription you have been using.
 
-11. Select the **Access control (IAM)** tile and select the **Role assignments** tab:
+10. Select the **Access control (IAM)** on the left and select the **Role assignments** tab:
 
     ![Azure portal screenshot, showing \'Access Control (IAM)\' button.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image34.png "Access Control button")
 
-12. You should see the **BU-Electronics-Admins** group assigned to the contributor role.
+11. You should see the **BU-Electronics-Admins** group assigned to the contributor role.
 
     ![Under User, the BU-Electronics-Admin group is circled. It has the Role of Contributor, and Access as Assigned.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image113.png "BU-Electronics-Admin group")
 
@@ -770,19 +812,19 @@ In this task, you will create a script that will create a new resource group, as
 
 1. Login to the Azure portal at <https://portal.azure.com> using your normal credentials (not the **ElectronicsAdmin** account).
 
-2. Launch the Azure Cloud Shell and select PowerShell. If prompted to create storage, select the **Create storage** button.
+2. Launch the Azure Cloud Shell and select PowerShell if prompted. If prompted to create storage, select the **Create storage** button.
 
     ![Azure portal screenshot showing the button to launch the Azure Cloud Shell.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image93.png "Azure Cloud Shell launch button")
 
     ![Azure portal screenshot showing the Azure Cloud Shell first launch experience.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image94.png "Azure Cloud Shell PowerShell")
 
-3. Create a new script called **CreateProjectResourceGroup.ps1** and open in the Cloud Shell using **code** by typing the following:
+3. Create a new script called **CreateProjectResourceGroup.ps1** and open it in the Cloud Shell using **code** by entering the following:
 
     ```s
     touch CreateProjectResourceGroup.ps1; code CreateProjectResourceGroup.ps1
     ```
 
-4. Add the following code to the script, and **Save** the file:
+4. Add the following code to the script, and **Save** the file by clicking **Save** under the ellipse (...):
 
     ```powershell
     param(
@@ -809,7 +851,7 @@ In this task, you will create a script that will create a new resource group, as
                             -ObjectId $groupObjectId
 
     # Assign policy to apply IOCode tag
-    $definition = Get-AzPolicyDefinition | where {$_.Properties.displayName -eq "Append tag and its default value"}
+    $definition = Get-AzPolicyDefinition | where {$_.Properties.displayName -eq "Append a tag and its value to resources"}
 
     $parameters = @{
         tagName = 'IOCode'
@@ -823,7 +865,7 @@ In this task, you will create a script that will create a new resource group, as
                                 -PolicyParameterObject $parameters
 
     # Assign policy to apply CostCenter tag
-    $definition = Get-AzPolicyDefinition | where {$_.Properties.displayName -eq "Append tag and its default value"}
+    $definition = Get-AzPolicyDefinition | where {$_.Properties.displayName -eq "Append a tag and its value to resources"}
 
     $parameters = @{
         tagName = 'CostCenter'
@@ -837,11 +879,11 @@ In this task, you will create a script that will create a new resource group, as
                                 -PolicyParameterObject $parameters
     ```
 
-    This PowerShell script creates a new resource group in the specified region. It then assigns the group to the owner role definition just for the resource group. It will allow users in the group to have full ownership of resources within the resource group only. This code applies a built-in policy to append a tag with name 'IOCode' and another tag for 'CostCenter' and then applies the given tag value to any resource created in the resource group.
+    This PowerShell script creates a new resource group in the specified region. It then assigns the group to the owner role definition just for the resource group. It will allow users in the group to have full ownership of resources within the resource group only. This code applies a built-in policy to append a tag with the name **IOCode** and another tag for **CostCenter** and then applies the given tag value to any resource created in the resource group.
 
-    > **Note**: The 'Apply tag and its default value' policy applies tags to the resources included in the assignment scope, but it does not apply any tags to the parent resource group for those resources. It is important to understand that in Azure, tags are not automatically inherited from a parent object without additional configuration.
+    > **Note**: The **Apply tag and its default value** policy applies tags to the resources included in the assignment scope, but it does not apply any tags to the parent resource group for those resources. It is important to understand that in Azure, tags are not automatically inherited from a parent object without additional configuration.
 
-5. Close **code** using the **Close Editor** command by selecting **Close Editor** in the menu behind the ellipsis (...).
+5. Close **code** by selecting **Close Editor** under the ellipsis (...).
 
 6. In the **Console** pane, create a new variable called **\$location**, and specify a region name to deploy to the resource group to. This location must be one of the supported regions in your previously created policy.
 
@@ -875,7 +917,7 @@ In this task, you will create a script that will create a new resource group, as
         -Location $location
     ```
 
-10. You can now search for resources with the applied tags to verify the policy has been applied. Execute the following PowerShell to validate that the storage account has been tagged.
+10. You can now search for resources with the applied tags to verify the policy has been applied. Execute the following PowerShell commands to validate that the storage account has been tagged.
 
     ```powershell
     Get-AzResource -TagName IOCode
@@ -890,13 +932,17 @@ In this task, you will create a script that will create a new resource group, as
 
 11. Switch back to the Azure Management portal using the **ElectronicsAdmin** credentials.
 
+    - Username: **electronicsadmin@[the tenant name you noted earlier]**
+
+    - Password: **demo@pass123**
+
 12. Select **Resource Groups**.
 
 13. Select the **DelegatedProjectDemoRG** resource group.
 
     ![Screenshot of the DelegatedProjectDemo resource group.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image114.png "DelegatedProjectDemo resource group")
 
-14. Select the **Access control (IAM)** icon, then select the **Role assignments** tab. Note that the BU-Electronics-Admins security group is set as an Owner of the resource group.
+14. Select **Access control (IAM)**, then select the **Role assignments** tab. Note that the BU-Electronics-Admins security group is set as an Owner of the resource group.
 
     ![Under User, the BU-Electronics-Admin group now has the Role of Owner, Contributor, which is circled.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image115.png "Owner, Contributor permissions")
 
@@ -908,7 +954,7 @@ In this task, you will create a script that will create a new resource group, as
 
     ![In the Add permissions blade, Owner is circled.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image41.png "Add permissions role assignment blade")
 
-17. Select the **BU-Electronics-Users group** and select **Save** to add the group to the role.
+17. Select the **BU-Electronics-Users** group and select **Save** to add the group to the role.
 
     ![BU-Electronics-Users is circled.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image42.png "BU-Electronics-Users")
 
@@ -934,77 +980,81 @@ In this exercise you will create an Azure Blueprint at the Management Group scop
 
 In this task, you will create a new Azure Blueprint and add several artifacts to the blueprint. You will then save a draft of the blueprint.
 
-1. In the Azure portal at <https://portal.azure.com> navigate to the Azure Blueprints service by selecting **All services**, searching for **Blueprints**, and then selecting **Blueprints**.
+1. Sign out and sign back into the portal with your regular global admin credentials. 
+
+2. In the Azure portal at <https://portal.azure.com> navigate to the Azure Blueprints service by selecting **All services**, searching for **Blueprints**, and then selecting **Blueprints**.
 
     ![Blueprints service under the All services menu.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image117.png "Azure Blueprints under All services in the Azure portal")
 
     > **Tip**: You can pin the Blueprints service to the portal navigation by selecting the star next to **Blueprints**.
 
-2. In the **Getting started** blade, select **Create** under the *Create a blueprint* heading.
+3. In the **Getting started** blade, select **Create** under **Create a blueprint**. 
 
     ![Getting started blade with the Create button under Create a blueprint highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image118.png "Create a blueprint")
 
-3. Select **Start with a blank blueprint**.
+4. Select **Start with a blank blueprint**.
 
     ![Choose a blueprint sample blade with the Blank Blueprint tile highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image119.png "Create a blank blueprint")
 
-4. In the **Create blueprint** blade, enter the following to complete the form:
+5. In the **Create blueprint** blade, enter the following to complete the form:
 
     - Blueprint name: **governance-baseline**
+
     - Blueprint description: **The governance-baseline blueprint will be applied to all subscriptions within the ERC management group.**
+  
     - Definition location: **Enterprise Ready Cloud** management group
 
     ![Create blueprint blade with the form completed.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image120.png "Create blueprint")
 
-5. Select **Next : Artifacts >>**.
+6. Select **Next : Artifacts >>**.
 
-6. Select **+ Add artifact...** and then select **Policy assignment** for the **Artifact type** in the **Add artifact** blade.
+7. Select **+ Add artifact...** and then select **Policy assignment** for the **Artifact type** in the **Add artifact** blade.
 
     ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image121.png "Add artifact")
 
-7. Select the **Require specified tag on resource groups** policy and select **Add**.
+8. Select the **Require a tag on resource groups** policy and select **Add**.
 
-    ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected and the Require specified tag on resource groups policy definition highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image132.png "Add artifact policy definition selection")
+    ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected and the Require a tag on resource groups policy definition highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image132.png "Add artifact policy definition selection")
 
     > **Note**: In Exercise 2, Azure Policy was used to automatically tag resources as they were created in a resource group but recall that any tags on the resource group itself were not inherited. Through this blueprint, we will ensure that the *IOCode* and *CostCenter* tags are enforced on each resource group that is created *and* that the tags that are set on the resource group are automatically inherited by any child resources.
 
-8. Select **+ Add artifact...** and then select **Policy assignment** for the **Artifact type** in the **Add artifact** blade.
+9.  Select **+ Add artifact...** and then select **Policy assignment** for the **Artifact type** in the **Add artifact** blade.
 
     ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image121.png "Add artifact")
 
-9. Select the **Require specified tag on resource groups** policy and select **Add**.
+10. Select the **Require a tag on resource groups** policy and select **Add**.
 
-    ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected and the Require specified tag on resource groups policy definition highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image132.png "Add artifact policy definition selection")
+    ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected and the Require a tag on resource groups policy definition highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image132.png "Add artifact policy definition selection")
 
     > **Note**: We need to add two of the same policy definition so we can enforce each tag for *IOCode* and *CostCenter*.
 
-10. Select **+ Add artifact...** and then select **Policy assignment** for the **Artifact type** in the **Add artifact** blade.
+11. Select **+ Add artifact...** and then select **Policy assignment** for the **Artifact type** in the **Add artifact** blade.
 
     ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image121.png "Add artifact")
 
-11. Select the **Append tag and its value from the resource group** policy and select **Add**.
+12. Select the **Append a tag and its value from the resource group** policy and select **Add**.
 
-    ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected and the Append tag and its value from the resource group policy definition highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image123.png "Add artifact policy definition selection")
+    ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected and the Append a tag and its value from the resource group policy definition highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image123.png "Add artifact policy definition selection")
 
-12. Select **+ Add artifact...** and then select **Policy assignment** for the **Artifact type** in the **Add artifact** blade.
+13. Select **+ Add artifact...** and then select **Policy assignment** for the **Artifact type** in the **Add artifact** blade.
 
     ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image121.png "Add artifact")
 
-13. Select the **Append tag and its value from the resource group** policy and select **Add**.
+14. Select the **Append a tag and its value from the resource group** policy and select **Add**.
 
-    ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected and the Append tag and its value from the resource group policy definition highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image123.png "Add artifact policy definition selection")
+    ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected and the Append a tag and its value from the resource group policy definition highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image123.png "Add artifact policy definition selection")
 
     > **Note**: We need to add two of the same policy definition so we can ensure each tag for *IOCode* and *CostCenter* is replicated from the resource group to any child resources.
 
-14. Select **+ Add artifact...** and then select **Azure Resource Manager template (Subscription)** for the **Artifact type** in the **Add artifact** blade.
+15. Select **+ Add artifact...** and then select **Azure Resource Manager template (Subscription)** for the **Artifact type** in the **Add artifact** blade.
 
     ![Add artifact blade in the Azure portal with the Azure Resource Manager template (Subscription) artifact type selected.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image125.png "Add artifact")
 
-15. Complete the form with the following information. This resource group will be used to demonstrate that the policy enacted in our blueprint is working by creating a resource group and then creating a storage account within that resource group.
+16. Complete the form with the following information. This resource group will be used to demonstrate that the policy enacted in our blueprint is working by creating a resource group and then creating a storage account within that resource group.
 
     - Artifact display name: **BU-RG**
 
-16. In the Template field, paste the following template and select **Add**:
+17. In the Template field, paste the following template and select **Add**:
 
     ```json
     {
@@ -1107,7 +1157,7 @@ In this task, you will create a new Azure Blueprint and add several artifacts to
 
     > **Note**: The template parameters will be determined at the time the blueprint is assigned. This allows us flexibility if we need to make a blueprint assignment multiple times and have it maintain a dynamic nature.
 
-17. Save the blueprint as a draft by selecting the **Save Draft** button.
+18. Save the blueprint as a draft by selecting the **Save Draft** button.
 
     ![Create blueprint blade in the Azure portal for with the Save Draft highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image127.png "Save Draft blueprint")
 
@@ -1129,21 +1179,30 @@ In this task, you will publish the previously created blueprint and assign the b
 
     ![The governance-baseline blueprint with the Assign blueprint button highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image130.png "Assign blueprint button")
 
-5. In the **Assign blueprint** blade, select your target **Subscription**, location (making sure to select a location your previous policy allows such as East US), and then scroll down to the **Artifact parameters** section of the blade.
+5. In the **Assign blueprint** blade, select your target **Subscription**, location (making sure to select a location your previous policy allows such as **East US**), and then scroll down to the **Artifact parameters** section of the blade.
 
     ![The governance-baseline blueprint Assign blueprint form.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image131.png "Assign blueprint")
 
 6. Complete the **Artifact parameters** section of the blade with the following:
 
     - Append tag and its value from the resource group - Tag Name: **IOCode**
+  
     - Append tag and its value from the resource group - Tag Name: **CostCenter**
+  
     - BU-RG
+  
       - rgName: **EnterpriseITRG**
+  
       - rgLocation: **eastus**
+  
       - storagePrefix: **treyrsrch**
+  
       - IOCode: **1000151**
+  
       - CostCenter: **Enterprise IT**
+  
     - Require specified tag on resource groups - Tag Name: **IOCode**
+  
     - Require specified tag on resource groups - Tag Name: **CostCenter**
 
     ![The governance-baseline blueprint Assign blueprint form with the Artifact parameters section highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image133.png "Assign blueprint Artifact parameters")
@@ -1152,7 +1211,7 @@ In this task, you will publish the previously created blueprint and assign the b
 
     ![The governance-baseline blueprint assignment being created toast notification.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image134.png "Creating blueprint assignment")
 
-8. You will receive an error that blueprint assignment cannot be made as the blueprint resource is disallowed by the *Service catalog* policy that was created in Exercise 1.
+8. You will receive an error that the blueprint assignment cannot be made as the blueprint resource is disallowed by the *Service catalog* policy that was created in Exercise 1.
 
 ### Task 3: Update the Service catalog policy to allow blueprint assignments
 
@@ -1168,7 +1227,7 @@ In this task, you will update an existing policy that blocks the deployment of B
 
     ![The Service catalog policy with the Edit definition button highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image136.png "Edit definition")
 
-4. Add the following after the `Microsoft.Insights` source and select **Save**.
+4. Add a comma after  `Microsoft.Insights` source and select **Enter**. Add the following then select **Save**.
 
     ```json
     {
@@ -1200,14 +1259,23 @@ In this task you will make a blueprint assignment of a published blueprint to an
 5. Complete the **Artifact parameters** section of the blade with the following:
 
     - Append tag and its value from the resource group - Tag Name: **IOCode**
+
     - Append tag and its value from the resource group - Tag Name: **CostCenter**
+
     - BU-RG
+  
       - rgName: **EnterpriseITRG**
+  
       - rgLocation: **eastus**
+  
       - storagePrefix: **treyrsrch**
+  
       - IOCode: **1000151**
+  
       - CostCenter: **Enterprise IT**
+  
     - Require specified tag on resource groups - Tag Name: **IOCode**
+  
     - Require specified tag on resource groups - Tag Name: **CostCenter**
 
     ![The governance-baseline blueprint Assign blueprint form with the Artifact parameters section highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image133.png "Assign blueprint Artifact parameters")
