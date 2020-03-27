@@ -1324,10 +1324,14 @@ The policy required to audit for the match of a given tag name and value is a cu
 
 3. In the **New Policy definition** form, enter the following values:
 
-    - Definition location: **Enterprise Ready Cloud**
+    - Definition location: The **Enterprise Ready Cloud** management group
+  
     - Name: **Audit tag and its value from the resource group**
+  
     - Description: **Audit tag and its value from the resource group**
+
     - Category: **(Create new) Tagging**
+  
     - Policy rule: **Use the definition in the following code block**:
 
     ```json
@@ -1370,9 +1374,12 @@ To simplify the management of our blueprint, next we will create a new initiativ
 
 2. In the **New Initiative definition** form, enter the following values:
 
-    - Definition location: **Enterprise Ready Cloud**
+    - Definition location: The **Enterprise Ready Cloud** management group
+  
     - Name: **Governance Baseline Initiative**
+
     - Description: **Governance Baseline Initiative for use in the governance-baseline blueprint**
+  
     - Category: **(Use existing) Tagging**
 
 3. Add the following policies to the initiative and set the parameters to the following:
@@ -1380,18 +1387,23 @@ To simplify the management of our blueprint, next we will create a new initiativ
       - **Audit tag and its value from the resource group**
         - Value(s): **Use Initiative Parameter**
           - **TAGNAME_1**
+  
       - **Audit tag and its value from the resource group**
         - Value(s): **Use Initiative Parameter**
-          - **TAGNAME_2**
-      - **Require specified tag on resource groups**
+          - **TAGNAME_2** (Click **Create a new initiative parameter**)
+  
+      - **Require a tag on resource groups**
         - Value(s): **Use Initiative Parameter**
           - **TAGNAME_1**
-      - **Require specified tag on resource groups**
+
+      - **Require a tag on resource groups**
         - Value(s): **Use Initiative Parameter**
           - **TAGNAME_2**
+  
       - **Append tag and its value from the resource group**
         - Value(s): **Use Initiative Parameter**
           - **TAGNAME_1**
+
       - **Append tag and its value from the resource group**
         - Value(s): **Use Initiative Parameter**
           - **TAGNAME_2**
@@ -1420,7 +1432,7 @@ To simplify the management of our blueprint, next we will create a new initiativ
 
     ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image121.png "Add artifact")
 
-6. Select the **Governance Baseline Initiative** and select **Add**.
+6. Under **Initiative definitions**, select the **Governance Baseline Initiative** and select **Add**.
 
     ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected and the Governance Baseline Initiative highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image147.png "Add artifact")
 
@@ -1453,13 +1465,21 @@ To simplify the management of our blueprint, next we will create a new initiativ
 14. Complete the **Artifact parameters** section of the blade with the following:
 
     - BU-RG
+
       - rgName: **EnterpriseITRG**
+  
       - rgLocation: **eastus**
+  
       - storagePrefix: **treyrsrch**
+  
       - IOCode: **1000151**
+  
       - CostCenter: **Enterprise IT**
+  
     - Governance Baseline Initiative
+  
       - Tag Name: **IOCode**
+  
       - Tag Name: **CostCenter**
 
     ![The governance-baseline blueprint Assign blueprint form with the Artifact parameters section highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image153.png "Assign blueprint Artifact parameters")
@@ -1484,7 +1504,7 @@ To simplify the management of our blueprint, next we will create a new initiativ
 
 In this task you will explore the compliance features of Azure Policy by working with the previously created audit policy that was a part of the *Governance Baseline Initiative* initiative definition created in the *Enterprise Ready Cloud* management group.
 
-1. Launch the Azure Cloud Shell and select PowerShell. If prompted to create storage, select the **Create storage** button.
+1. Launch the Azure Cloud Shell and select PowerShell if prompted. If prompted to create storage, select the **Create storage** button.
 
     ![Azure portal screenshot showing the button to launch the Azure Cloud Shell.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image93.png "Azure Cloud Shell launch button")
 
@@ -1564,7 +1584,7 @@ In this task you will create the Virtual Machine resource that will be used for 
 
 1. Log in to the Azure Portal.
 
-2. Launch the Azure Cloud Shell and select PowerShell. If prompted to create storage, select the **Create storage** button.
+2. Launch the Azure Cloud Shell and select PowerShell if prompted. If prompted to create storage, select the **Create storage** button.
 
     ![Azure portal screenshot showing the button to launch the Azure Cloud Shell.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image93.png "Azure Cloud Shell launch button")
 
@@ -1573,7 +1593,7 @@ In this task you will create the Virtual Machine resource that will be used for 
 3. Execute the following script to create the resource group *CMCRG*.
 
     ```powershell
-    New-AzResourceGroup -Name CMCRG -Location EastUS
+    New-AzResourceGroup -Name CMCRG -Location EastUS -Tag @{CostCenter="Finance"; IOCode="1000152"}
     ```
 
 4. Execute the following script to build the Virtual Machine Resource.
@@ -1581,18 +1601,20 @@ In this task you will create the Virtual Machine resource that will be used for 
    ```powershell
      New-AzVm `
         -ResourceGroupName "CMCRG" `
-        -Name "VMCMC" `
+        -Name "VMCMC-vm" `
         -Location "East US" `
-        -VirtualNetworkName "CMCVNet" `
+        -VirtualNetworkName "CMCVNet-vnet" `
         -SubnetName "CMC-SN" `
         -SecurityGroupName "CMCNSG" `
         -PublicIpAddressName "CMCPIP" `
-        -OpenPorts 3389
+        -OpenPorts 3389 `
+        -Size Standard_DS1_v2
     ```
   
 5. Enter the following information for the username and password:
 
    - Username: **demouser**
+  
    - Password: **Demo@pass123**
 
     ![Azure Cloud Shell screenshot showing the creation of a resource group.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image170.png "Azure Cloud Shell PowerShell")
@@ -1607,7 +1629,7 @@ In this task you will create the Virtual Machine resource that will be used for 
 
     > **Note**: This was done to generate activity for the log review later in the exercise. Also, this is to validate that the machine SKU can be changed without restriction.
 
-9. From the Azure Portal navigate to the **Activity Log** and select the Operation Name **Create or Update Virtual Machine**.
+9. From the VM page navigate to the **Activity Log** and select the Operation Name **Create or Update Virtual Machine**.
 
     ![Azure Activity Log screenshot showing the operations completed.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image172.png "Azure Activity Log")
 
@@ -1627,7 +1649,7 @@ In this task you will create a management group and assign a policy that contain
 
     ![Azure portal screenshot, showing the Add management group button that is used to launch the Add management group blade.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image91.png "Add management group button")
 
-3. In the **Add management group** blade fill in the management group ID and display name (we'll use 'CostManagementandCompliance' as the management group ID and 'CMC' as the display name). If you have existing management groups, create this as a child of Root and select **Save**.
+3. In the **Add management group** blade, enter **CostManagementandCompliance** as the management group ID and **CMC** as the display name. Select **Save**.
 
     ![Azure portal screenshot, showing New Management Group, then the group ID and name being filled in.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image171.png "Create Management Group blade")
 
@@ -1637,7 +1659,7 @@ In this task you will create a management group and assign a policy that contain
 
 6. Once your subscription is selected from the drop-down menu select the **Save** button to complete the configuration.
 
-7. Navigate to **CMCRG Resource Group** and select **Policy** within the Azure portal.
+7. Navigate to **CMCRG** Resource Group and select **Policies** on the left.
 
     ![Azure portal screenshot, showing Azure Policy, then the assignment option.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image176.png "Azure Policy Assignments blade")
 
@@ -1655,12 +1677,16 @@ In this task you will create a management group and assign a policy that contain
 
     ![Azure portal screenshot, showing New Management Group, then the group ID and name being filled in.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image175.png "Create Management Group blade")
 
-13. In the **Basics** form under, enter the following values:
+13. In the **Basics** form below, enter the following values:
 
-    - Policy definition: **Leave Defaulted**
+    - Policy definition: **Leave the default**
+  
     - Name: **Allow D Series SKU**
+
     - Description: **Allow only some SKU options for the D Series**
+  
     - Policy enforcement: **Enabled**
+  
     - Assigned by: **Enterprise IT**
 
     The assignment form should look like this:
@@ -1700,8 +1726,11 @@ In this task you will create a Budget to ensure accountability within the organi
 4. Under the Budget Details enter the following information:
 
    - Name: **HRBudget**
+
    - Reset period: **Monthly**
+  
    - Start date: **Leave defaults**
+  
    - Expiration date: **2020 November 1**
 
 5. Under the **Budget amount**, enter $100. Select **Next** when done.
@@ -1711,13 +1740,17 @@ In this task you will create a Budget to ensure accountability within the organi
 7. In the Add action group blade enter the following information:
 
    - Action group name: **Budget Alert**
+  
    - Short name: **BA**
+  
    - Subscription: **Your Subscription**
+  
    - Resource group: **CMCRG**
   
     Under actions enter the following information:
 
      - Action Name: **Budget Action**
+  
      - Action Type: **Email/SMS/Push/Voice**
   
 8. Select the checkbox next to email and enter your email address. Select **OK** twice when done. Select the close sign on the **Manage Actions** blade to return to the **Create Budget** blade.
@@ -1750,7 +1783,7 @@ After completing the hands-on lab, you will remove the policies on your subscrip
 
     ![Azure portal screenshot, showing the Policy - Compliance blade. The Policies option has been selected, and the compliance management is shown.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image189.png "Policy-Compliance blade")  
 
-2. Delete the **CMCRG** to remove the virtual machine and all the other resources created as its dependencies.
+2. Delete the **CMCRG** resource group to remove the virtual machine and all the other resources created as its dependencies.
 
 ## After the hands-on lab
 
