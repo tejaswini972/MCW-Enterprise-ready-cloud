@@ -9,7 +9,7 @@ Hands-on lab step-on-step
 </div>
 
 <div class="MCWHeader3">
-December 2019
+March 2020
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -18,7 +18,7 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-© 2019 Microsoft Corporation. All rights reserved.
+© 2020 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners
 
@@ -610,7 +610,7 @@ In this task, you will use the Azure management portal to validate each of the p
 
     ![Azure portal screenshot showing the review and create experience for an IoT Hub.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image95.png "Azure IoT Hub Create")
 
-3. The IoT Hub creation blade should show an error. If you click the error message you will see in the activity log that there were policy errors. 
+3. The IoT Hub creation blade should show an error. If you select the error message you will see in the activity log that there were policy errors. 
 
     ![Azure portal screenshot, showing error message](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image21.png "Error screenshot")
 
@@ -653,7 +653,7 @@ In this task, you will use the Azure management portal to validate each of the p
 
 #### Subtask 3: Test the resource location policy <!-- omit in toc -->
 
-1. Testing the resource location policy follows a similar pattern. You woukd attempt to create a permitted resource, with a permitted name, but in a non-permitted region. For example, you can attempt to create a virtual network within the **PolicyTestRG** resource group named **erc-vnet** in **South Central US**. This should be rejected by the **Restrict Azure locations** policy.
+1. Testing the resource location policy follows a similar pattern. You would attempt to create a permitted resource, with a permitted name, but in a non-permitted region. For example, you can attempt to create a virtual network within the **PolicyTestRG** resource group named **erc-vnet** in **South Central US**. This should be rejected by the **Restrict Azure locations** policy.
 
     ![Azure portal screenshot, showing Errors blade. The error message states the template deployment failed due to a policy violation.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image110.png "Policy Violation error message")
 
@@ -824,7 +824,7 @@ In this task, you will create a script that will create a new resource group, as
     touch CreateProjectResourceGroup.ps1; code CreateProjectResourceGroup.ps1
     ```
 
-4. Add the following code to the script, and **Save** the file by clicking **Save** under the ellipse (...):
+4. Add the following code to the script, and **Save** the file by selecting **Save** under the ellipse (...):
 
     ```powershell
     param(
@@ -1390,7 +1390,7 @@ To simplify the management of our blueprint, next we will create a new initiativ
   
       - **Audit tag and its value from the resource group**
         - Value(s): **Use Initiative Parameter**
-          - **TAGNAME_2** (Click **Create a new initiative parameter**)
+          - **TAGNAME_2** (select **Create a new initiative parameter**)
   
       - **Require a tag on resource groups**
         - Value(s): **Use Initiative Parameter**

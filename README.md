@@ -6,7 +6,7 @@ Even as large as it is, Trey seeks to maximize the cost-effectiveness and flexib
 
 Trey is interested in a large-scale solution that will help mitigate creeping costs and start the transition to a modern cloud-based enterprise architecture using a solid set of controls for governance.
 
-December 2019
+March 2020
 
 ## Target audience
 
