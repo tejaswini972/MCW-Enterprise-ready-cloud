@@ -58,8 +58,8 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Help references](#help-references-3)
     - [Task 1: Identifying Changes in Resources](#task-1-identifying-changes-in-resources)
     - [Task 2: Using Policies to Control SKUs](#task-2-using-policies-to-control-skus)
-  - [Task 3: Create and Manage Azure Budgets](#task-3-create-and-manage-azure-budgets)
-  - [Task 4: Environment Cleanup](#task-4-environment-cleanup)
+    - [Task 3: Create and Manage Azure Budgets](#task-3-create-and-manage-azure-budgets)
+    - [Task 4: Environment Cleanup](#task-4-environment-cleanup)
   - [After the hands-on lab](#after-the-hands-on-lab)
     - [Task 1: Remove resources and configuration created during this lab](#task-1-remove-resources-and-configuration-created-during-this-lab)
 
@@ -112,7 +112,7 @@ In this task, you will create a new Management Group and move a subscription int
 
 1. Launch the Azure portal and navigate to **Management Groups** under **All services**.
 
-    ![Portal screenshot showing All Service \> Management Groups selection sequence](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image4.png "Create Management Group selection path")
+    ![Portal screenshot showing All Service \> Management Groups selection sequence.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image4.png "Create Management Group selection path")
 
 2. Select **Start using management groups** to launch the **Add management group** blade.
 
@@ -134,7 +134,7 @@ In this task, you will create a new Management Group and move a subscription int
 
     ![Azure portal screenshot showing the details link for the newly created management group.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image92.png "Details link")
 
-    Select **Add Subscription** and for the subscription, choose your subscription from the drop-down list, then select **Save**.
+5. Select **Add Subscription** and for the subscription, choose your subscription from the drop-down list, then select **Save**.
 
     ![Azure portal screenshot, showing adding an existing subscription to a management group](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image6.png "Add subscription to management group screenshot")
 
@@ -148,7 +148,7 @@ In this exercise, you will apply one of the built-in Azure Policies to restrict 
 
     ![Azure portal screenshot showing the Azure Cloud Shell first launch experience.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image94.png "Azure Cloud Shell PowerShell")
 
-2. Run the following script in the shell. 
+2. Run the following script in the shell:
 
     ```powershell
     $FormatEnumerationLimit = -1
@@ -390,7 +390,7 @@ In this exercise, you will apply another built-in Azure policy to restrict the c
 
 1. First, we'll create the resource group for the exclusion scope. Select **Resource groups**, then **Add**, and then enter the resource group name **ExpressRouteRG**, select your subscription, and choose a resource group location:
 
-    ![Azure portal screenshot, showing adding a resource group called \'ExpressRoute-group\'](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image104.png "Create resource group selection path")
+    ![Azure portal screenshot, showing adding a resource group called \'ExpressRoute-group\'.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image104.png "Create resource group selection path")
 
 2. Once complete, select **Review + Create** and then **Create**.
 
@@ -398,7 +398,7 @@ In this exercise, you will apply another built-in Azure policy to restrict the c
 
     - Scope: **Enterprise Ready Cloud** (The management group created earlier.)
   
-    - Exclusions: **The resource group created in Step 1 above, ExpressRouteRG. Select the management group, subscription, and resource group**
+    - Exclusions: **The resource group created in Step 1 above, ExpressRouteRG. Select the management group, subscription, and resource group**.
   
     - Policy definition: **Not allowed resource types**
   
@@ -472,7 +472,7 @@ First, we will create a generic policy definition that restricts resources of a 
 
 2. Complete the Policy definition form as follows:
 
-    - Definition location: **Enterprise Ready Cloud** (The Management Group created earlier)
+    - Definition location: **Enterprise Ready Cloud** (The Management Group created earlier.)
   
     - Name: **Restrict Resource Name Suffix**
   
@@ -480,7 +480,7 @@ First, we will create a generic policy definition that restricts resources of a 
   
     - Category:  **Create new** > **Naming**
   
-    - Policy rule: **Replace with the below JSON**
+    - Policy rule: **Replace with the below JSON**:
 
     ```json
     {
@@ -536,7 +536,7 @@ Next, we shall create a policy initiative comprising multiple instances of our p
 
 2. Fill in the **Initiative definition** blade as follows (but **do not** select **Save** yet).
 
-    - Definition location: **Enterprise Ready Cloud** (the Management Group created earlier)
+    - Definition location: **Enterprise Ready Cloud** (The Management Group created earlier.)
   
     - Name: **Naming Convention**
   
@@ -558,13 +558,13 @@ Next, we shall create a policy initiative comprising multiple instances of our p
 
     ![Azure portal screenshot, showing filling in the parameters for the \'Restrict Resource Name Suffix\' policy definition, as part of the policy initiative definition](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image16.png "Policies and Parameters screenshot")
 
-6. Repeat steps 3-5 above except enter the following values.
+6. Repeat steps 3-5 above except enter the following values:
 
-        - Resource Type: **Microsoft.Network/virtualNetworks**
+      - Resource Type: **Microsoft.Network/virtualNetworks**
 
-        - Resource Name Suffix: **vnet**
+      - Resource Name Suffix: **vnet**
 
-    ![Azure portal screenshot, showing filling in the parameters for the \'Restrict Resource Name Suffix\' policy definition, as part of the policy initiative definition](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image168.png "Policies and Parameters screenshot")
+    ![Azure portal screenshot, showing filling in the parameters for the \'Restrict Resource Name Suffix\' policy definition, as part of the policy initiative definition.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image168.png "Policies and Parameters screenshot")
 
 7. Once you've added each resource type, select **Save**.
 
@@ -636,7 +636,7 @@ In this task, you will use the Azure management portal to validate each of the p
   
     - Billing model: **Unlimited**
   
-    - Subscription: **Select your Azure subscription**
+    - Subscription: **Select your Azure subscription**.
   
     - Resource group: (Create new) **PolicyTestRG**.
    
@@ -1324,7 +1324,7 @@ The policy required to audit for the match of a given tag name and value is a cu
 
 3. In the **New Policy definition** form, enter the following values:
 
-    - Definition location: The **Enterprise Ready Cloud** management group
+    - Definition location: The **Enterprise Ready Cloud** management group.
   
     - Name: **Audit tag and its value from the resource group**
   
@@ -1374,7 +1374,7 @@ To simplify the management of our blueprint, next we will create a new initiativ
 
 2. In the **New Initiative definition** form, enter the following values:
 
-    - Definition location: The **Enterprise Ready Cloud** management group
+    - Definition location: The **Enterprise Ready Cloud** management group.
   
     - Name: **Governance Baseline Initiative**
 
@@ -1596,7 +1596,7 @@ In this task you will create the Virtual Machine resource that will be used for 
     New-AzResourceGroup -Name CMCRG -Location EastUS -Tag @{CostCenter="Finance"; IOCode="1000152"}
     ```
 
-4. Execute the following script to build the Virtual Machine Resource.
+4. Execute the following script to build the Virtual Machine Resource:
 
    ```powershell
      New-AzVm `
@@ -1643,7 +1643,7 @@ In this task you will create a management group and assign a policy that contain
 
 1. Launch the Azure Management Portal, and navigate to **Management Groups** under **All services**:
 
-    ![Portal screenshot showing All Service \> Management Groups selection sequence](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image4.png "Create Management Group selection path")
+    ![Portal screenshot showing the All Service \> Management Groups selection sequence.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image4.png "Create Management Group selection path")
 
 2. Select the **Add management group** option.
 
@@ -1651,7 +1651,7 @@ In this task you will create a management group and assign a policy that contain
 
 3. In the **Add management group** blade, enter **CostManagementandCompliance** as the management group ID and **CMC** as the display name. Select **Save**.
 
-    ![Azure portal screenshot, showing New Management Group, then the group ID and name being filled in.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image171.png "Create Management Group blade")
+    ![Azure portal screenshot, showing New Management Group, then the group ID and name filled in.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image171.png "Create Management Group blade")
 
 4. Select the **CMC** Management Group and then select the details link next to it.
 
@@ -1675,7 +1675,7 @@ In this task you will create a management group and assign a policy that contain
 
 12. Next, select the ellipsis to configure the Scope. Select **CMC**, then select the **Select** button.
 
-    ![Azure portal screenshot, showing New Management Group, then the group ID and name being filled in.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image175.png "Create Management Group blade")
+    ![Azure portal screenshot, showing New Management Group, then the group ID and name filled in.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image175.png "Create Management Group blade")
 
 13. In the **Basics** form below, enter the following values:
 
@@ -1717,7 +1717,7 @@ In this task you will create a Budget to ensure accountability within the organi
 
 1. From within the Azure portal navigate to **All Services**, select **General** and then **Subscriptions**.
 
-    ![Portal screenshot showing All Service \> Subscriptions selection sequence](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image183.png "Subscriptions selection path")
+    ![Portal screenshot showing the All Service \> Subscriptions selection sequence.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image183.png "Subscriptions selection path")
 
 2. Select your subscription and then select **Budgets** under the Cost Management menu.
 
