@@ -500,7 +500,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 ## Preferred solution
 
-### Cost Management <!-- omit in toc -->
+*Cost Management*
 
 1. **Design:** What tools are available to meet the cost management requirements of the individual business units, the finance team, and the Cloud Governance team? These requirements include setting budgets and alerts for each cost center, creating spending reports and forecasts, and identifying and investigating anomalies. What permissions and configuration are required to enable users to have access to these tools?
 
@@ -615,7 +615,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     Once resources are tagged, costs can be tracked using the cost management tools described earlier.
 
-### Security Baseline <!-- omit in toc -->
+*Security Baseline* <!-- omit in toc -->
 
 1. **Design:** Following an outage, how can you identify and analyze any recent changes which may have contributed? Investigations will require details of which resource was changed, when it was changed, who made the change, and what was changed. How can you track changes to both resource properties (capturing both before and after state) as well as changes inside a virtual machine?
 
@@ -720,7 +720,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     ```
 
-### Resource Consistency <!-- omit in toc -->
+*Resource Consistency* <!-- omit in toc -->
 
 1. **Design:** Identify a solution to restrict which services can be used in each Azure subscription, across the company. How will your solution allow exceptions for specific resource types for approved pilot projects or one-off deployments?
 
@@ -787,7 +787,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
    Instead, separate policies should be created for each resource type. These policies should then be combined into a single *policy initiative.* Using a policy initiative allows the entire set of policies to be assigned in a single operation. It also allows new naming rules to be added easily---simply add the new rule to the initiative and it will be applied across all existing assignments.
 
-### Identity Baseline <!-- omit in toc -->
+*Identity Baseline* <!-- omit in toc -->
 
 1. **Design:** How can you delegate access management to business units for each application they own, while protecting other applications and ensuring that controls implemented by the Cloud Governance teams cannot be circumvented?
 
@@ -831,7 +831,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     If network access to an existing Trey deployment is required, this can be implemented using a VPN. This can be either a site-to-site VPN from the contingent staff offices to the Trey virtual network, or individual point-to-site VPNs for each contingent staff team member. Access can be limited as necessary using network security groups.
 
-### Deployment Acceleration <!-- omit in toc -->
+*Deployment Acceleration* <!-- omit in toc -->
 
 1. **Design:** How can Trey implement an 'Infrastructure as Code' approach to deployment automation, while still allowing different footprints in different environments?
 
