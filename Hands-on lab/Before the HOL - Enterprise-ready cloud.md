@@ -73,8 +73,8 @@ To validate that you have Global Administrator access to your Azure AD tenant, w
 
     > **Note**: This setting is not a global property and applies only to the currently signed in user. You can't elevate access for all members of the Global Administrator role.
 
-<!-- 6. In <http://portal.azure.com>, select **All Services**, and type in **Azure Active Directory**.
+6. In <http://portal.azure.com>, select **All Services**, and type in **Azure Active Directory**.
 
-7. Sign out and sign back in to refresh your access. -->
+7. Sign out and sign back in to refresh your access.
 
 You should follow all steps provided *before* performing the Hands-on lab.
