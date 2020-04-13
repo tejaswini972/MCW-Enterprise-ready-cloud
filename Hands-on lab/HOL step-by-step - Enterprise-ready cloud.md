@@ -1615,7 +1615,7 @@ In this task you will create the Virtual Machine resource that will be used for 
 
    - Username: **demouser**
   
-   - Password: **Demo@pass123**
+   - Password: **demo@pass123**
 
     ![Azure Cloud Shell screenshot showing the creation of a resource group.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image170.png "Azure Cloud Shell PowerShell")
 
