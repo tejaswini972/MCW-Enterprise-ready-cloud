@@ -9,7 +9,7 @@ Hands-on lab step-on-step
 </div>
 
 <div class="MCWHeader3">
-March 2020
+June 2020
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -58,8 +58,8 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Help references](#help-references-3)
     - [Task 1: Identifying Changes in Resources](#task-1-identifying-changes-in-resources)
     - [Task 2: Using Policies to Control SKUs](#task-2-using-policies-to-control-skus)
-    - [Task 3: Create and Manage Azure Budgets](#task-3-create-and-manage-azure-budgets)
-    - [Task 4: Environment Cleanup](#task-4-environment-cleanup)
+  - [Task 3: Create and Manage Azure Budgets](#task-3-create-and-manage-azure-budgets)
+  - [Task 4: Environment Cleanup](#task-4-environment-cleanup)
   - [After the hands-on lab](#after-the-hands-on-lab)
     - [Task 1: Remove resources and configuration created during this lab](#task-1-remove-resources-and-configuration-created-during-this-lab)
 
@@ -110,13 +110,13 @@ In this task, you will create a new Management Group and move a subscription int
 
 > **Note**: We'll use our own Management Group, if you have permissions you could also use the Tenant Root Management Group.
 
-1. Launch the Azure portal and navigate to **Management Groups** under **All services**.
+1. Launch the Azure portal and expand the blade by selecting the icon in the upper left hand corner. Then select **All services**.
 
     ![Portal screenshot showing All Service \> Management Groups selection sequence.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image4.png "Create Management Group selection path")
 
 2. Select **Start using management groups** to launch the **Add management group** blade.
 
-    ![Azure portal screenshot, showing the Start using management groups button that is used to launch the Add management group blade.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image89.png "Start using management groups button")
+    ![Azure portal screenshot, showing the location of the show portal menu icon.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image89.png "Expand the blade")
 
     If you already have management groups in place, you can use the **Add management group** button to launch the **Add management group** blade.
 
@@ -126,7 +126,7 @@ In this task, you will create a new Management Group and move a subscription int
 
     ![Azure portal screenshot, showing New Management Group, then the group ID and name being filled in.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image5.png "Create Management Group blade")
 
-    > **Note**: If this is the first management group being created, note that it may take up to 15 minutes for it to complete.
+    > **Note**: If this is the first management group being created, it may take up to 15 minutes for it to complete.
 
     ![Azure portal screenshot showing the notification that it may take up to 15 minutes to create the management group.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image90.png "Create management group notification")
 
@@ -1803,7 +1803,7 @@ After completing the hands-on lab, you will remove the policies on your subscrip
 
 7. Navigate to the **Management Groups** blade.
 
-8. Remove any Management Groups crated during this lab.
+8. Remove any Management Groups created during this lab.
 
 9. Navigate to the **Resource Groups** blade.
 
