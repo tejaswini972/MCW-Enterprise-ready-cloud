@@ -60,8 +60,5 @@ Trey is interested in a large-scale solution that will help mitigate creeping co
     - [Task 1: Identifying Changes in Resources](#task-1-identifying-changes-in-resources)
     - [Task 2: Using Policies to Control SKUs](#task-2-using-policies-to-control-skus)
   - [Task 3: Create and Manage Azure Budgets](#task-3-create-and-manage-azure-budgets)
-  - [Task 4: Environment Cleanup](#task-4-environment-cleanup)
-  - [After the hands-on lab](#after-the-hands-on-lab)
-    - [Task 1: Remove resources and configuration created during this lab](#task-1-remove-resources-and-configuration-created-during-this-lab)
 
 <!-- /TOC -->
