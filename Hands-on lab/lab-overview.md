@@ -28,18 +28,18 @@ Trey is interested in a large-scale solution that will help mitigate creeping co
 <!-- TOC -->
 
 - Enterprise-ready cloud hands-on lab step-by-step
-  - Abstract and learning objectives](#abstract-and-learning-objectives)
-  - Overview](#overview)
-  - Requirements](#requirements)
-  - Solution architecture](#solution-architecture)
-  - Exercise 1: Create the policy for Enterprise IT](#exercise-1-create-the-policy-for-enterprise-it)
-    - Help references](#help-references)
-    - Task 1: Create a Management Group](#task-1-create-a-management-group)
-    - Task 2: Apply the service catalog policy](#task-2-apply-the-service-catalog-policy)
-    - Task 3: Restrict the creation of ExpressRoute circuits](#task-3-restrict-the-creation-of-expressroute-circuits)
-    - Task 4: Restrict the creation of resources in regions](#task-4-restrict-the-creation-of-resources-in-regions)
-    - Task 5: Create and apply a naming convention](#task-5-create-and-apply-a-naming-convention)
-    - Task 6: Test the policies](#task-6-test-the-policies)
+  - Abstract and learning objectives
+  - Overview
+  - Requirements
+  - Solution architecture
+  - Exercise 1: Create the policy for Enterprise IT
+    - Help references
+    - Task 1: Create a Management Group
+    - Task 2: Apply the service catalog policy
+    - Task 3: Restrict the creation of ExpressRoute circuits
+    - Task 4: Restrict the creation of resources in regions
+    - Task 5: Create and apply a naming convention
+    - Task 6: Test the policies
   - Exercise 2: Configure delegated permissions
     - Help references
     - Task 1: Create groups in Azure AD for delegation
