@@ -27,7 +27,7 @@ Trey is interested in a large-scale solution that will help mitigate creeping co
 
 <!-- TOC -->
 
-- [Enterprise-ready cloud hands-on lab step-by-step](#enterprise-ready-cloud-hands-on-lab-step-by-step)
+- Enterprise-ready cloud hands-on lab step-by-step
   - [Abstract and learning objectives](#abstract-and-learning-objectives)
   - [Overview](#overview)
   - [Requirements](#requirements)
